@@ -1,0 +1,8 @@
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_advanced_opengl.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_geometry_shader.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_load_model.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_load_model_skybox.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_math_test.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir

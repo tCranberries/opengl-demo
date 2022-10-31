@@ -1,0 +1,13 @@
+# ninja log v5
+0	622	1667204542794695782	CMakeFiles/playground.dir/common/shader.cpp.o	274df8036437e46c
+0	501	1667204542674696634	CMakeFiles/playground.dir/common/stb_image.cpp.o	8dceae0f90b6f77f
+0	477	1667204542650696804	CMakeFiles/playground.dir/playground/playground.cpp.o	d6710f41221e6bf7
+0	84	1667205328135389219	playground	54f3219a54d731db
+1	278	1667204542454698195	CMakeFiles/playground.dir/common/camera.cpp.o	39c935ace1370c87
+1	403	1667205367537061178	CMakeFiles/playground_load_model.dir/common/camera.cpp.o	ed01377f3d76af44
+0	546	1667205367681080771	CMakeFiles/playground_load_model.dir/common/stb_image.cpp.o	af55451c43ec8fa8
+1	667	1667205367801097098	CMakeFiles/playground_load_model.dir/common/shader.cpp.o	d9a3141e7e658cdc
+1	668	1667205367805097643	CMakeFiles/playground_load_model.dir/common/mesh.cpp.o	5e1488affe27a937
+2	848	1667205367985122134	CMakeFiles/playground_load_model.dir/common/model.cpp.o	719f334b390546ed
+1	1108	1667205441490171223	CMakeFiles/playground_load_model.dir/playground_load_model/playground.cpp.o	7ecb384d9c8d4d75
+1108	1279	1667205441658189961	playground_load_model	40201168a118e799

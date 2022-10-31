@@ -1,0 +1,105 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Tutorials",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "playground::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-playground-Debug-752f3f7b2e861b4d9397.json",
+					"name" : "playground",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "playground_advanced_opengl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-playground_advanced_opengl-Debug-9f20dbc669bc6366dba8.json",
+					"name" : "playground_advanced_opengl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "playground_geometry_shader::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-playground_geometry_shader-Debug-3d72120b900127775ec7.json",
+					"name" : "playground_geometry_shader",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "playground_load_model::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-playground_load_model-Debug-cc067ab4e69c2ddae361.json",
+					"name" : "playground_load_model",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "playground_load_model_skybox::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-playground_load_model_skybox-Debug-6d7716da8bd64ac51ccc.json",
+					"name" : "playground_load_model_skybox",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "playground_math_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-playground_math_test-Debug-9fc180e48c914821bdf6.json",
+					"name" : "playground_math_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wzw/documents/ogl-master/cmake-build-debug",
+		"source" : "/home/wzw/documents/ogl-master"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
