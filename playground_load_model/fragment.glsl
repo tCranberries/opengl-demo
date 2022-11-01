@@ -154,14 +154,6 @@ vec3 calcSpotLight(SpotLight light, vec3 normalVec, vec3 fragmentPosition, vec3 
     ambientColor *= factor;
     diffuseColor *= factor;
     specularColor *= factor;
-//
-    // attenuation
-//    float distance = length(light.spotLightPosition - fragmentPosition);
-//    float attr = 1.0 / (light.constant + light.linear * distance + light.quadratic * distance * distance);
-//
-//    ambientColor *= attr;
-//    diffuseColor *= attr;
-//    specularColor *= attr;
 
     return ambientColor + diffuseColor + specularColor;
 }

@@ -16,6 +16,7 @@
 GLFWwindow* window;
 
 const char* vertexPath = "/home/wzw/documents/ogl-master/playground_load_model/vertex.glsl";
+const char* geometryPath = "/home/wzw/documents/ogl-master/playground_load_model/geometry.glsl";
 const char* lampVertexPath = "/home/wzw/documents/ogl-master/playground_load_model/lampVertex.glsl";
 const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/fragment.glsl";
 const char* lampFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/lampFragment.glsl";
@@ -206,7 +207,7 @@ int main() {
     glBindVertexArray(0);
 
     // model
-    GLuint program = LoadShaders(vertexPath, fragmentPath);
+    GLuint program = LoadShaders(vertexPath, geometryPath, fragmentPath);
     Model hunter((std::string(modelPath)));
 
     // lamp
@@ -266,6 +267,8 @@ int main() {
             glUseProgram(program);
             SetUniform(program, "projection", projection);
             SetUniform(program, "view", view);
+            SetUniform(program, "time", currentTime);
+
             glm::mat4 model(1.0f);
             model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
             model = glm::rotate(model, glm::radians(20.0f) * (float)glfwGetTime(), glm::vec3(0.0f, 1.0f, 0.0f));

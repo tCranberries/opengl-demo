@@ -16,6 +16,7 @@
 GLFWwindow* window;
 
 const char* vertexPath = "/home/wzw/documents/ogl-master/playground_geometry_shader/vertex.glsl";
+const char* geometryPath = "/home/wzw/documents/ogl-master/playground_geometry_shader/geometry.glsl";
 const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_geometry_shader/fragment.glsl";
 
 const int WIDTH = 2560;
@@ -156,7 +157,7 @@ int main() {
 
     // 模型矩阵是一种变换矩阵，它能通过对物体进行位移，缩放和旋转，来将它放在合适的位置
 
-    GLuint program = LoadShaders(vertexPath, fragmentPath);
+    GLuint program = LoadShaders(vertexPath, geometryPath, fragmentPath);
     glUseProgram(program);
 
     while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0) {
