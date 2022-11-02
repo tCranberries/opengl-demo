@@ -23,7 +23,7 @@ const char* lampFragmentPath = "/home/wzw/documents/ogl-master/playground_load_m
 const char* skyboxVertexPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/skyboxVertex.glsl";
 const char* skyboxFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/skyboxFragment.glsl";
 
-const char* modelPath = "/home/wzw/documents/ogl-master/resource/nanosuit/nanosuit.obj";
+const char* modelPath = "/home/wzw/documents/ogl-master/resource/model/nanosuit/nanosuit.obj";
 const char* skyRightPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/right.jpg";
 const char* skyLeftPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/left.jpg";
 const char* skyTopPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/top.jpg";

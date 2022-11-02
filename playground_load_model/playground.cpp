@@ -22,7 +22,7 @@ const char* lampVertexPath = "/home/wzw/documents/ogl-master/playground_load_mod
 const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/fragment.glsl";
 const char* normalFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_fragment.glsl";
 const char* lampFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/lampFragment.glsl";
-const char* modelPath = "/home/wzw/documents/ogl-master/resource/nanosuit/nanosuit.obj";
+const char* modelPath = "/home/wzw/documents/ogl-master/resource/model/nanosuit/nanosuit.obj";
 
 // view port size
 const int WIDTH = 2560;

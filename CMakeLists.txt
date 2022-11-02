@@ -86,7 +86,6 @@ target_link_libraries(playground_geometry_shader
 		)
 
 
-
 # User playground
 add_executable(playground_load_model
 		playground_load_model/playground.cpp
@@ -101,6 +100,24 @@ add_executable(playground_load_model
 		common/model.cpp
 		common/model.h)
 target_link_libraries(playground_load_model
+		${ALL_LIBS}
+		)
+
+
+# User playground
+add_executable(playground_instancing
+		playground_instancing/playground.cpp
+		common/shader.cpp
+		common/shader.hpp
+		common/stb_image.cpp
+		common/stb_image.h
+		common/camera.cpp
+		common/camera.h
+		common/mesh.cpp
+		common/mesh.h
+		common/model.cpp
+		common/model.h)
+target_link_libraries(playground_instancing
 		${ALL_LIBS}
 		)
 
