@@ -5,11 +5,10 @@ layout(location = 1) in vec3 aNormal;
 layout(location = 2) in vec2 aTexCoord;
 
 // out block
-out VS_OUT {
-    vec2 vTexCoord;
-    vec3 vNormal;
-    vec3 vFragmentPosition;
-} vsOut;
+out vec2 vTexCoord;
+out vec3 vNormal;
+out vec3 vFragmentPosition;
+
 
 uniform mat4 projection;
 uniform mat4 view;
@@ -20,9 +19,9 @@ void main() {
     gl_Position = projection * view * model * vec4(aPosition, 1.0);
 
     // 片段位置
-    vsOut.vFragmentPosition = vec3(model * vec4(aPosition, 1.0));
+    vFragmentPosition = vec3(model * vec4(aPosition, 1.0));
     // 该点在世界空间中的 法向量
-    vsOut.vNormal = normalize(norMatrix * aNormal);
+    vNormal = normalize(norMatrix * aNormal);
     // 纹理坐标
-    vsOut.vTexCoord = aTexCoord;
+    vTexCoord = aTexCoord;
 }

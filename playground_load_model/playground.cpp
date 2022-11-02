@@ -16,9 +16,11 @@
 GLFWwindow* window;
 
 const char* vertexPath = "/home/wzw/documents/ogl-master/playground_load_model/vertex.glsl";
-const char* geometryPath = "/home/wzw/documents/ogl-master/playground_load_model/geometry.glsl";
+const char* normalVertexPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_vertex.glsl";
+const char* normalGeometryPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_geometry.glsl";
 const char* lampVertexPath = "/home/wzw/documents/ogl-master/playground_load_model/lampVertex.glsl";
 const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/fragment.glsl";
+const char* normalFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_fragment.glsl";
 const char* lampFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/lampFragment.glsl";
 const char* modelPath = "/home/wzw/documents/ogl-master/resource/nanosuit/nanosuit.obj";
 
@@ -207,8 +209,10 @@ int main() {
     glBindVertexArray(0);
 
     // model
-    GLuint program = LoadShaders(vertexPath, geometryPath, fragmentPath);
+    GLuint program = LoadShaders(vertexPath, nullptr, fragmentPath);
     Model hunter((std::string(modelPath)));
+
+    GLuint normalProgram = LoadShaders(normalVertexPath, normalGeometryPath, normalFragmentPath);
 
     // lamp
     GLuint lampProgram = LoadShaders(lampVertexPath, lampFragmentPath);
@@ -267,7 +271,6 @@ int main() {
             glUseProgram(program);
             SetUniform(program, "projection", projection);
             SetUniform(program, "view", view);
-            SetUniform(program, "time", currentTime);
 
             glm::mat4 model(1.0f);
             model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -276,7 +279,7 @@ int main() {
             SetUniform(program, "model", model);
             // hunter normal matrix
             glm::mat3 normalMatrix(1.0f);
-            normalMatrix = glm::mat3(glm::transpose(glm::inverse(model)));
+            normalMatrix = glm::mat3(glm::transpose(glm::inverse( model)));
             SetUniform(program, "norMatrix", normalMatrix);
 
             for (int i = 0; i < NR_POINT_LIGHTS; i++) {
@@ -312,6 +315,18 @@ int main() {
             SetUniform(program, "cameraPosition", camera.position);
 
             hunter.draw(program);
+
+
+
+            glUseProgram(normalProgram);
+            SetUniform(normalProgram, "projection", projection);
+            SetUniform(normalProgram, "view", view);
+            SetUniform(normalProgram, "model", model);
+            glm::mat3 normalMatrix1(1.0f);
+            normalMatrix1 = glm::mat3(glm::transpose(glm::inverse(view * model)));
+            SetUniform(normalProgram, "norMatrix", normalMatrix1);
+
+            hunter.draw(normalProgram);
         }
 
 		// Swap buffers

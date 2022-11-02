@@ -156,18 +156,28 @@ GLuint LoadShaders(const char* vertexFilePath, const char* geometryFilePath, con
     GLint Result = GL_FALSE;
     int InfoLogLength;
 
-    GLuint VertexShaderID = CompileVertexShader(vertexFilePath);
-    GLuint GeometryShaderID = CompileGeometryShader(geometryFilePath);
-    GLuint FragmentShaderID = CompileFragmentShader(fragmentFilePath);
+    GLuint VertexShaderID;
+    GLuint GeometryShaderID;
+    GLuint FragmentShaderID;
+
+    GLuint ProgramID = glCreateProgram();
+    if (vertexFilePath) {
+        VertexShaderID = CompileVertexShader(vertexFilePath);
+        glAttachShader(ProgramID, VertexShaderID);
+    }
+
+    if (geometryFilePath) {
+        GeometryShaderID = CompileGeometryShader(geometryFilePath);
+        glAttachShader(ProgramID, GeometryShaderID);
+    }
+    if (fragmentFilePath) {
+        FragmentShaderID = CompileFragmentShader(fragmentFilePath);
+        glAttachShader(ProgramID, FragmentShaderID);
+    }
 
     // Link the program
     printf("Linking program\n");
-    GLuint ProgramID = glCreateProgram();
-    glAttachShader(ProgramID, VertexShaderID);
-    glAttachShader(ProgramID, GeometryShaderID);
-    glAttachShader(ProgramID, FragmentShaderID);
     glLinkProgram(ProgramID);
-
     // Check the program
     glGetProgramiv(ProgramID, GL_LINK_STATUS, &Result);
     glGetProgramiv(ProgramID, GL_INFO_LOG_LENGTH, &InfoLogLength);
@@ -177,11 +187,20 @@ GLuint LoadShaders(const char* vertexFilePath, const char* geometryFilePath, con
         printf("%s\n", &ProgramErrorMessage[0]);
     }
 
-    glDetachShader(ProgramID, VertexShaderID);
-    glDetachShader(ProgramID, FragmentShaderID);
 
-    glDeleteShader(VertexShaderID);
-    glDeleteShader(FragmentShaderID);
+    if (vertexFilePath) {
+        glDetachShader(ProgramID, VertexShaderID);
+        glDeleteShader(VertexShaderID);
+    }
+
+    if (geometryFilePath) {
+        glDetachShader(ProgramID, GeometryShaderID);
+        glDeleteShader(GeometryShaderID);
+    }
+    if (fragmentFilePath) {
+        glDetachShader(ProgramID, FragmentShaderID);
+        glDeleteShader(FragmentShaderID);
+    }
 
     return ProgramID;
 }
