@@ -4,10 +4,8 @@
 
 #include <iostream>
 #include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
 
-
-int main() {
+int main_1() {
 
     glm::vec3 origin(0.5f, 0.6f, 0.7f);
 

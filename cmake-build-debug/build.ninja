@@ -49,31 +49,38 @@ cmake_ninja_workdir = /home/wzw/documents/ogl-master/cmake-build-debug/
 
 build cmake_object_order_depends_target_playground: phony || CMakeFiles/playground.dir
 
-build CMakeFiles/playground.dir/playground/playground.cpp.o: CXX_COMPILER__playground_Debug /home/wzw/documents/ogl-master/playground/playground.cpp || cmake_object_order_depends_target_playground
-  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
-  DEP_FILE = CMakeFiles/playground.dir/playground/playground.cpp.o.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/playground.dir
-  OBJECT_FILE_DIR = CMakeFiles/playground.dir/playground
-
 build CMakeFiles/playground.dir/common/shader.cpp.o: CXX_COMPILER__playground_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground.dir/common/shader.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground.dir
   OBJECT_FILE_DIR = CMakeFiles/playground.dir/common
 
 build CMakeFiles/playground.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground.dir/common/stb_image.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground.dir
   OBJECT_FILE_DIR = CMakeFiles/playground.dir/common
 
 build CMakeFiles/playground.dir/common/camera.cpp.o: CXX_COMPILER__playground_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground.dir/common/camera.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground.dir/common
+
+build CMakeFiles/playground.dir/common/mesh.cpp.o: CXX_COMPILER__playground_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground.dir/common/mesh.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground.dir/common
+
+build CMakeFiles/playground.dir/common/model.cpp.o: CXX_COMPILER__playground_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground.dir/common/model.cpp.o.d
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground.dir
   OBJECT_FILE_DIR = CMakeFiles/playground.dir/common
 
@@ -85,10 +92,9 @@ build CMakeFiles/playground.dir/common/camera.cpp.o: CXX_COMPILER__playground_De
 #############################################
 # Link the executable playground
 
-build playground: CXX_EXECUTABLE_LINKER__playground_Debug CMakeFiles/playground.dir/playground/playground.cpp.o CMakeFiles/playground.dir/common/shader.cpp.o CMakeFiles/playground.dir/common/stb_image.cpp.o CMakeFiles/playground.dir/common/camera.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+build playground: CXX_EXECUTABLE_LINKER__playground_Debug CMakeFiles/playground.dir/common/shader.cpp.o CMakeFiles/playground.dir/common/stb_image.cpp.o CMakeFiles/playground.dir/common/camera.cpp.o CMakeFiles/playground.dir/common/mesh.cpp.o CMakeFiles/playground.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -107,28 +113,42 @@ build cmake_object_order_depends_target_playground_advanced_opengl: phony || CMa
 build CMakeFiles/playground_advanced_opengl.dir/playground_advanced_opengl/playground.cpp.o: CXX_COMPILER__playground_advanced_opengl_Debug /home/wzw/documents/ogl-master/playground_advanced_opengl/playground.cpp || cmake_object_order_depends_target_playground_advanced_opengl
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_advanced_opengl.dir/playground_advanced_opengl/playground.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_advanced_opengl.dir/playground_advanced_opengl
 
 build CMakeFiles/playground_advanced_opengl.dir/common/shader.cpp.o: CXX_COMPILER__playground_advanced_opengl_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_advanced_opengl
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_advanced_opengl.dir/common/shader.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_advanced_opengl.dir/common
 
 build CMakeFiles/playground_advanced_opengl.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_advanced_opengl_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_advanced_opengl
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_advanced_opengl.dir/common/stb_image.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_advanced_opengl.dir/common
 
 build CMakeFiles/playground_advanced_opengl.dir/common/camera.cpp.o: CXX_COMPILER__playground_advanced_opengl_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_advanced_opengl
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_advanced_opengl.dir/common/camera.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_advanced_opengl.dir/common
+
+build CMakeFiles/playground_advanced_opengl.dir/common/mesh.cpp.o: CXX_COMPILER__playground_advanced_opengl_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_advanced_opengl
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_advanced_opengl.dir/common/mesh.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_advanced_opengl.dir/common
+
+build CMakeFiles/playground_advanced_opengl.dir/common/model.cpp.o: CXX_COMPILER__playground_advanced_opengl_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_advanced_opengl
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_advanced_opengl.dir/common/model.cpp.o.d
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_advanced_opengl.dir/common
 
@@ -140,10 +160,9 @@ build CMakeFiles/playground_advanced_opengl.dir/common/camera.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable playground_advanced_opengl
 
-build playground_advanced_opengl: CXX_EXECUTABLE_LINKER__playground_advanced_opengl_Debug CMakeFiles/playground_advanced_opengl.dir/playground_advanced_opengl/playground.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/shader.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/stb_image.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/camera.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+build playground_advanced_opengl: CXX_EXECUTABLE_LINKER__playground_advanced_opengl_Debug CMakeFiles/playground_advanced_opengl.dir/playground_advanced_opengl/playground.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/shader.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/stb_image.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/camera.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/mesh.cpp.o CMakeFiles/playground_advanced_opengl.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground_advanced_opengl.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -162,28 +181,42 @@ build cmake_object_order_depends_target_playground_geometry_shader: phony || CMa
 build CMakeFiles/playground_geometry_shader.dir/playground_geometry_shader/playground.cpp.o: CXX_COMPILER__playground_geometry_shader_Debug /home/wzw/documents/ogl-master/playground_geometry_shader/playground.cpp || cmake_object_order_depends_target_playground_geometry_shader
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_geometry_shader.dir/playground_geometry_shader/playground.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_geometry_shader.dir/playground_geometry_shader
 
 build CMakeFiles/playground_geometry_shader.dir/common/shader.cpp.o: CXX_COMPILER__playground_geometry_shader_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_geometry_shader
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_geometry_shader.dir/common/shader.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_geometry_shader.dir/common
 
 build CMakeFiles/playground_geometry_shader.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_geometry_shader_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_geometry_shader
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_geometry_shader.dir/common/stb_image.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_geometry_shader.dir/common
 
 build CMakeFiles/playground_geometry_shader.dir/common/camera.cpp.o: CXX_COMPILER__playground_geometry_shader_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_geometry_shader
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_geometry_shader.dir/common/camera.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_geometry_shader.dir/common
+
+build CMakeFiles/playground_geometry_shader.dir/common/mesh.cpp.o: CXX_COMPILER__playground_geometry_shader_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_geometry_shader
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_geometry_shader.dir/common/mesh.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_geometry_shader.dir/common
+
+build CMakeFiles/playground_geometry_shader.dir/common/model.cpp.o: CXX_COMPILER__playground_geometry_shader_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_geometry_shader
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_geometry_shader.dir/common/model.cpp.o.d
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_geometry_shader.dir/common
 
@@ -195,10 +228,9 @@ build CMakeFiles/playground_geometry_shader.dir/common/camera.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable playground_geometry_shader
 
-build playground_geometry_shader: CXX_EXECUTABLE_LINKER__playground_geometry_shader_Debug CMakeFiles/playground_geometry_shader.dir/playground_geometry_shader/playground.cpp.o CMakeFiles/playground_geometry_shader.dir/common/shader.cpp.o CMakeFiles/playground_geometry_shader.dir/common/stb_image.cpp.o CMakeFiles/playground_geometry_shader.dir/common/camera.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+build playground_geometry_shader: CXX_EXECUTABLE_LINKER__playground_geometry_shader_Debug CMakeFiles/playground_geometry_shader.dir/playground_geometry_shader/playground.cpp.o CMakeFiles/playground_geometry_shader.dir/common/shader.cpp.o CMakeFiles/playground_geometry_shader.dir/common/stb_image.cpp.o CMakeFiles/playground_geometry_shader.dir/common/camera.cpp.o CMakeFiles/playground_geometry_shader.dir/common/mesh.cpp.o CMakeFiles/playground_geometry_shader.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground_geometry_shader.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -217,42 +249,42 @@ build cmake_object_order_depends_target_playground_load_model: phony || CMakeFil
 build CMakeFiles/playground_load_model.dir/playground_load_model/playground.cpp.o: CXX_COMPILER__playground_load_model_Debug /home/wzw/documents/ogl-master/playground_load_model/playground.cpp || cmake_object_order_depends_target_playground_load_model
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model.dir/playground_load_model/playground.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model.dir/playground_load_model
 
 build CMakeFiles/playground_load_model.dir/common/shader.cpp.o: CXX_COMPILER__playground_load_model_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_load_model
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model.dir/common/shader.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model.dir/common
 
 build CMakeFiles/playground_load_model.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_load_model_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_load_model
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model.dir/common/stb_image.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model.dir/common
 
 build CMakeFiles/playground_load_model.dir/common/camera.cpp.o: CXX_COMPILER__playground_load_model_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_load_model
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model.dir/common/camera.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model.dir/common
 
 build CMakeFiles/playground_load_model.dir/common/mesh.cpp.o: CXX_COMPILER__playground_load_model_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_load_model
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model.dir/common/mesh.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model.dir/common
 
 build CMakeFiles/playground_load_model.dir/common/model.cpp.o: CXX_COMPILER__playground_load_model_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_load_model
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model.dir/common/model.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model.dir/common
 
@@ -266,13 +298,80 @@ build CMakeFiles/playground_load_model.dir/common/model.cpp.o: CXX_COMPILER__pla
 
 build playground_load_model: CXX_EXECUTABLE_LINKER__playground_load_model_Debug CMakeFiles/playground_load_model.dir/playground_load_model/playground.cpp.o CMakeFiles/playground_load_model.dir/common/shader.cpp.o CMakeFiles/playground_load_model.dir/common/stb_image.cpp.o CMakeFiles/playground_load_model.dir/common/camera.cpp.o CMakeFiles/playground_load_model.dir/common/mesh.cpp.o CMakeFiles/playground_load_model.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground_load_model.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = playground_load_model
   TARGET_PDB = playground_load_model.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target playground_instancing_planet
+
+
+#############################################
+# Order-only phony target for playground_instancing_planet
+
+build cmake_object_order_depends_target_playground_instancing_planet: phony || CMakeFiles/playground_instancing_planet.dir
+
+build CMakeFiles/playground_instancing_planet.dir/playground_instancing_planet/playground.cpp.o: CXX_COMPILER__playground_instancing_planet_Debug /home/wzw/documents/ogl-master/playground_instancing_planet/playground.cpp || cmake_object_order_depends_target_playground_instancing_planet
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_instancing_planet.dir/playground_instancing_planet/playground.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_instancing_planet.dir/playground_instancing_planet
+
+build CMakeFiles/playground_instancing_planet.dir/common/shader.cpp.o: CXX_COMPILER__playground_instancing_planet_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_instancing_planet
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_instancing_planet.dir/common/shader.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_instancing_planet.dir/common
+
+build CMakeFiles/playground_instancing_planet.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_instancing_planet_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_instancing_planet
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_instancing_planet.dir/common/stb_image.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_instancing_planet.dir/common
+
+build CMakeFiles/playground_instancing_planet.dir/common/camera.cpp.o: CXX_COMPILER__playground_instancing_planet_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_instancing_planet
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_instancing_planet.dir/common/camera.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_instancing_planet.dir/common
+
+build CMakeFiles/playground_instancing_planet.dir/common/mesh.cpp.o: CXX_COMPILER__playground_instancing_planet_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_instancing_planet
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_instancing_planet.dir/common/mesh.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_instancing_planet.dir/common
+
+build CMakeFiles/playground_instancing_planet.dir/common/model.cpp.o: CXX_COMPILER__playground_instancing_planet_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_instancing_planet
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_instancing_planet.dir/common/model.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_instancing_planet.dir/common
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target playground_instancing_planet
+
+
+#############################################
+# Link the executable playground_instancing_planet
+
+build playground_instancing_planet: CXX_EXECUTABLE_LINKER__playground_instancing_planet_Debug CMakeFiles/playground_instancing_planet.dir/playground_instancing_planet/playground.cpp.o CMakeFiles/playground_instancing_planet.dir/common/shader.cpp.o CMakeFiles/playground_instancing_planet.dir/common/stb_image.cpp.o CMakeFiles/playground_instancing_planet.dir/common/camera.cpp.o CMakeFiles/playground_instancing_planet.dir/common/mesh.cpp.o CMakeFiles/playground_instancing_planet.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+  FLAGS = -g
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
+  OBJECT_DIR = CMakeFiles/playground_instancing_planet.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = playground_instancing_planet
+  TARGET_PDB = playground_instancing_planet.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target playground_instancing
@@ -286,42 +385,42 @@ build cmake_object_order_depends_target_playground_instancing: phony || CMakeFil
 build CMakeFiles/playground_instancing.dir/playground_instancing/playground.cpp.o: CXX_COMPILER__playground_instancing_Debug /home/wzw/documents/ogl-master/playground_instancing/playground.cpp || cmake_object_order_depends_target_playground_instancing
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_instancing.dir/playground_instancing/playground.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_instancing.dir/playground_instancing
 
 build CMakeFiles/playground_instancing.dir/common/shader.cpp.o: CXX_COMPILER__playground_instancing_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_instancing
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_instancing.dir/common/shader.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_instancing.dir/common
 
 build CMakeFiles/playground_instancing.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_instancing_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_instancing
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_instancing.dir/common/stb_image.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_instancing.dir/common
 
 build CMakeFiles/playground_instancing.dir/common/camera.cpp.o: CXX_COMPILER__playground_instancing_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_instancing
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_instancing.dir/common/camera.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_instancing.dir/common
 
 build CMakeFiles/playground_instancing.dir/common/mesh.cpp.o: CXX_COMPILER__playground_instancing_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_instancing
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_instancing.dir/common/mesh.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_instancing.dir/common
 
 build CMakeFiles/playground_instancing.dir/common/model.cpp.o: CXX_COMPILER__playground_instancing_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_instancing
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_instancing.dir/common/model.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_instancing.dir/common
 
@@ -335,8 +434,7 @@ build CMakeFiles/playground_instancing.dir/common/model.cpp.o: CXX_COMPILER__pla
 
 build playground_instancing: CXX_EXECUTABLE_LINKER__playground_instancing_Debug CMakeFiles/playground_instancing.dir/playground_instancing/playground.cpp.o CMakeFiles/playground_instancing.dir/common/shader.cpp.o CMakeFiles/playground_instancing.dir/common/stb_image.cpp.o CMakeFiles/playground_instancing.dir/common/camera.cpp.o CMakeFiles/playground_instancing.dir/common/mesh.cpp.o CMakeFiles/playground_instancing.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground_instancing.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -355,42 +453,42 @@ build cmake_object_order_depends_target_playground_load_model_skybox: phony || C
 build CMakeFiles/playground_load_model_skybox.dir/playground_load_model_skybox/playground.cpp.o: CXX_COMPILER__playground_load_model_skybox_Debug /home/wzw/documents/ogl-master/playground_load_model_skybox/playground.cpp || cmake_object_order_depends_target_playground_load_model_skybox
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model_skybox.dir/playground_load_model_skybox/playground.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model_skybox.dir/playground_load_model_skybox
 
 build CMakeFiles/playground_load_model_skybox.dir/common/shader.cpp.o: CXX_COMPILER__playground_load_model_skybox_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_load_model_skybox
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model_skybox.dir/common/shader.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model_skybox.dir/common
 
 build CMakeFiles/playground_load_model_skybox.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_load_model_skybox_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_load_model_skybox
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model_skybox.dir/common/stb_image.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model_skybox.dir/common
 
 build CMakeFiles/playground_load_model_skybox.dir/common/camera.cpp.o: CXX_COMPILER__playground_load_model_skybox_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_load_model_skybox
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model_skybox.dir/common/camera.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model_skybox.dir/common
 
 build CMakeFiles/playground_load_model_skybox.dir/common/mesh.cpp.o: CXX_COMPILER__playground_load_model_skybox_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_load_model_skybox
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model_skybox.dir/common/mesh.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model_skybox.dir/common
 
 build CMakeFiles/playground_load_model_skybox.dir/common/model.cpp.o: CXX_COMPILER__playground_load_model_skybox_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_load_model_skybox
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_load_model_skybox.dir/common/model.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_load_model_skybox.dir/common
 
@@ -404,8 +502,7 @@ build CMakeFiles/playground_load_model_skybox.dir/common/model.cpp.o: CXX_COMPIL
 
 build playground_load_model_skybox: CXX_EXECUTABLE_LINKER__playground_load_model_skybox_Debug CMakeFiles/playground_load_model_skybox.dir/playground_load_model_skybox/playground.cpp.o CMakeFiles/playground_load_model_skybox.dir/common/shader.cpp.o CMakeFiles/playground_load_model_skybox.dir/common/stb_image.cpp.o CMakeFiles/playground_load_model_skybox.dir/common/camera.cpp.o CMakeFiles/playground_load_model_skybox.dir/common/mesh.cpp.o CMakeFiles/playground_load_model_skybox.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground_load_model_skybox.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -424,7 +521,14 @@ build cmake_object_order_depends_target_playground_math_test: phony || CMakeFile
 build CMakeFiles/playground_math_test.dir/playground_math_test/calculate.cpp.o: CXX_COMPILER__playground_math_test_Debug /home/wzw/documents/ogl-master/playground_math_test/calculate.cpp || cmake_object_order_depends_target_playground_math_test
   DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles/playground_math_test.dir/playground_math_test/calculate.cpp.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_math_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_math_test.dir/playground_math_test
+
+build CMakeFiles/playground_math_test.dir/playground_math_test/filesys.cpp.o: CXX_COMPILER__playground_math_test_Debug /home/wzw/documents/ogl-master/playground_math_test/filesys.cpp || cmake_object_order_depends_target_playground_math_test
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_math_test.dir/playground_math_test/filesys.cpp.o.d
+  FLAGS = -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/playground_math_test.dir
   OBJECT_FILE_DIR = CMakeFiles/playground_math_test.dir/playground_math_test
 
@@ -436,10 +540,9 @@ build CMakeFiles/playground_math_test.dir/playground_math_test/calculate.cpp.o: 
 #############################################
 # Link the executable playground_math_test
 
-build playground_math_test: CXX_EXECUTABLE_LINKER__playground_math_test_Debug CMakeFiles/playground_math_test.dir/playground_math_test/calculate.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+build playground_math_test: CXX_EXECUTABLE_LINKER__playground_math_test_Debug CMakeFiles/playground_math_test.dir/playground_math_test/calculate.cpp.o CMakeFiles/playground_math_test.dir/playground_math_test/filesys.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
   FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglfw  -lGLEW  -lassimp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
   OBJECT_DIR = CMakeFiles/playground_math_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -481,12 +584,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/wzw/documents/ogl-master/cmake-build-debug
 
-build all: phony playground playground_advanced_opengl playground_geometry_shader playground_load_model playground_instancing playground_load_model_skybox playground_math_test
-
-# =============================================================================
-# Unknown Build Time Dependencies.
-# Tell Ninja that they may appear as side effects of build rules
-# otherwise ordered by order-only dependencies.
+build all: phony playground playground_advanced_opengl playground_geometry_shader playground_load_model playground_instancing_planet playground_instancing playground_load_model_skybox playground_math_test
 
 # =============================================================================
 # Built-in targets

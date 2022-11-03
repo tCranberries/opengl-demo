@@ -1,9 +1,12 @@
 # CMake entry point
-cmake_minimum_required (VERSION 3.0)
+cmake_minimum_required (VERSION 3.22)
+
+set(CMAKE_CXX_STANDARD 20)
 project (Tutorials)
 
-find_package(OpenGL REQUIRED)
+set(OpenGL_GL_PREFERENCE LEGACY)
 
+find_package(OpenGL REQUIRED)
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
     message( FATAL_ERROR "Please select another Build Directory ! (and give it a clever name, like bin_Visual2012_64bits/)" )
@@ -14,12 +17,6 @@ endif()
 if( CMAKE_BINARY_DIR MATCHES " " )
 	message( "Your Build Directory contains spaces. If you experience problems when compiling, this can be the cause." )
 endif()
-
-
-
-# On Visual 2005 and above, this module can set the debug working directory
-cmake_policy(SET CMP0026 OLD)
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/rpavlik-cmake-modules-fe2273")
 
 
 if(INCLUDE_DISTRIB)
@@ -34,6 +31,18 @@ set(ALL_LIBS
 		assimp
 )
 
+set(src
+		common/shader.cpp
+		common/shader.hpp
+		common/stb_image.cpp
+		common/stb_image.h
+		common/camera.cpp
+		common/camera.h
+		common/mesh.cpp
+		common/mesh.h
+		common/model.cpp
+		common/model.h)
+
 add_definitions(
 	-DTW_STATIC
 	-DTW_NO_LIB_PRAGMA
@@ -44,13 +53,7 @@ add_definitions(
 
 # User playground
 add_executable(playground
-		playground/playground.cpp
-		common/shader.cpp
-		common/shader.hpp
-		common/stb_image.cpp
-		common/stb_image.h
-		common/camera.cpp
-		common/camera.h
+		${src}
 		)
 target_link_libraries(playground
 	${ALL_LIBS}
@@ -59,12 +62,7 @@ target_link_libraries(playground
 # User playground
 add_executable(playground_advanced_opengl
 		playground_advanced_opengl/playground.cpp
-		common/shader.cpp
-		common/shader.hpp
-		common/stb_image.cpp
-		common/stb_image.h
-		common/camera.cpp
-		common/camera.h
+		${src}
 		)
 target_link_libraries(playground_advanced_opengl
 		${ALL_LIBS}
@@ -74,12 +72,7 @@ target_link_libraries(playground_advanced_opengl
 # User playground
 add_executable(playground_geometry_shader
 		playground_geometry_shader/playground.cpp
-		common/shader.cpp
-		common/shader.hpp
-		common/stb_image.cpp
-		common/stb_image.h
-		common/camera.cpp
-		common/camera.h
+		${src}
 		)
 target_link_libraries(playground_geometry_shader
 		${ALL_LIBS}
@@ -89,34 +82,24 @@ target_link_libraries(playground_geometry_shader
 # User playground
 add_executable(playground_load_model
 		playground_load_model/playground.cpp
-		common/shader.cpp
-		common/shader.hpp
-		common/stb_image.cpp
-		common/stb_image.h
-		common/camera.cpp
-		common/camera.h
-		common/mesh.cpp
-		common/mesh.h
-		common/model.cpp
-		common/model.h)
+		${src})
 target_link_libraries(playground_load_model
 		${ALL_LIBS}
 		)
 
 
 # User playground
+add_executable(playground_instancing_planet
+		playground_instancing_planet/playground.cpp
+		${src})
+target_link_libraries(playground_instancing_planet
+		${ALL_LIBS}
+		)
+
+# User playground
 add_executable(playground_instancing
 		playground_instancing/playground.cpp
-		common/shader.cpp
-		common/shader.hpp
-		common/stb_image.cpp
-		common/stb_image.h
-		common/camera.cpp
-		common/camera.h
-		common/mesh.cpp
-		common/mesh.h
-		common/model.cpp
-		common/model.h)
+		${src})
 target_link_libraries(playground_instancing
 		${ALL_LIBS}
 		)
@@ -124,16 +107,7 @@ target_link_libraries(playground_instancing
 # User playground
 add_executable(playground_load_model_skybox
 		playground_load_model_skybox/playground.cpp
-		common/shader.cpp
-		common/shader.hpp
-		common/stb_image.cpp
-		common/stb_image.h
-		common/camera.cpp
-		common/camera.h
-		common/mesh.cpp
-		common/mesh.h
-		common/model.cpp
-		common/model.h)
+		${src})
 target_link_libraries(playground_load_model_skybox
 		${ALL_LIBS}
 		)
@@ -142,7 +116,7 @@ target_link_libraries(playground_load_model_skybox
 # User playground
 add_executable(playground_math_test
 		playground_math_test/calculate.cpp
-		)
+		playground_math_test/filesys.cpp)
 target_link_libraries(playground_math_test
 		${ALL_LIBS}
 		)
