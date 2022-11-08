@@ -510,6 +510,74 @@ build playground_load_model_skybox: CXX_EXECUTABLE_LINKER__playground_load_model
   TARGET_PDB = playground_load_model_skybox.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target playground_multisample_anti_aliasing
+
+
+#############################################
+# Order-only phony target for playground_multisample_anti_aliasing
+
+build cmake_object_order_depends_target_playground_multisample_anti_aliasing: phony || CMakeFiles/playground_multisample_anti_aliasing.dir
+
+build CMakeFiles/playground_multisample_anti_aliasing.dir/playground_multisample_anti_aliasing/playground.cpp.o: CXX_COMPILER__playground_multisample_anti_aliasing_Debug /home/wzw/documents/ogl-master/playground_multisample_anti_aliasing/playground.cpp || cmake_object_order_depends_target_playground_multisample_anti_aliasing
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_multisample_anti_aliasing.dir/playground_multisample_anti_aliasing/playground.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir/playground_multisample_anti_aliasing
+
+build CMakeFiles/playground_multisample_anti_aliasing.dir/common/shader.cpp.o: CXX_COMPILER__playground_multisample_anti_aliasing_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_multisample_anti_aliasing
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_multisample_anti_aliasing.dir/common/shader.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir/common
+
+build CMakeFiles/playground_multisample_anti_aliasing.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_multisample_anti_aliasing_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_multisample_anti_aliasing
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_multisample_anti_aliasing.dir/common/stb_image.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir/common
+
+build CMakeFiles/playground_multisample_anti_aliasing.dir/common/camera.cpp.o: CXX_COMPILER__playground_multisample_anti_aliasing_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_multisample_anti_aliasing
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_multisample_anti_aliasing.dir/common/camera.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir/common
+
+build CMakeFiles/playground_multisample_anti_aliasing.dir/common/mesh.cpp.o: CXX_COMPILER__playground_multisample_anti_aliasing_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_multisample_anti_aliasing
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_multisample_anti_aliasing.dir/common/mesh.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir/common
+
+build CMakeFiles/playground_multisample_anti_aliasing.dir/common/model.cpp.o: CXX_COMPILER__playground_multisample_anti_aliasing_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_multisample_anti_aliasing
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_multisample_anti_aliasing.dir/common/model.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir/common
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target playground_multisample_anti_aliasing
+
+
+#############################################
+# Link the executable playground_multisample_anti_aliasing
+
+build playground_multisample_anti_aliasing: CXX_EXECUTABLE_LINKER__playground_multisample_anti_aliasing_Debug CMakeFiles/playground_multisample_anti_aliasing.dir/playground_multisample_anti_aliasing/playground.cpp.o CMakeFiles/playground_multisample_anti_aliasing.dir/common/shader.cpp.o CMakeFiles/playground_multisample_anti_aliasing.dir/common/stb_image.cpp.o CMakeFiles/playground_multisample_anti_aliasing.dir/common/camera.cpp.o CMakeFiles/playground_multisample_anti_aliasing.dir/common/mesh.cpp.o CMakeFiles/playground_multisample_anti_aliasing.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+  FLAGS = -g
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
+  OBJECT_DIR = CMakeFiles/playground_multisample_anti_aliasing.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = playground_multisample_anti_aliasing
+  TARGET_PDB = playground_multisample_anti_aliasing.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target playground_math_test
 
 
@@ -584,7 +652,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/wzw/documents/ogl-master/cmake-build-debug
 
-build all: phony playground playground_advanced_opengl playground_geometry_shader playground_load_model playground_instancing_planet playground_instancing playground_load_model_skybox playground_math_test
+build all: phony playground playground_advanced_opengl playground_geometry_shader playground_load_model playground_instancing_planet playground_instancing playground_load_model_skybox playground_multisample_anti_aliasing playground_math_test
 
 # =============================================================================
 # Built-in targets

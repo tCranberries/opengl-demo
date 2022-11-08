@@ -112,6 +112,14 @@ target_link_libraries(playground_load_model_skybox
 		${ALL_LIBS}
 		)
 
+# User playground
+add_executable(playground_multisample_anti_aliasing
+		playground_multisample_anti_aliasing/playground.cpp
+		${src})
+target_link_libraries(playground_multisample_anti_aliasing
+		${ALL_LIBS}
+		)
+
 
 # User playground
 add_executable(playground_math_test
