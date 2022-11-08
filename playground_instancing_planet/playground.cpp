@@ -15,6 +15,7 @@
 GLFWwindow* window;
 
 const char* vertexPath = "/home/wzw/documents/ogl-master/playground_instancing_planet/vertex.glsl";
+const char* rockVertexPath = "/home/wzw/documents/ogl-master/playground_instancing_planet/rockVertex.glsl";
 const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_instancing_planet/fragment.glsl";
 const char* planetPath = "/home/wzw/documents/ogl-master/resource/model/planet/planet.obj";
 const char* rockPath = "/home/wzw/documents/ogl-master/resource/model/rock/rock.obj";
@@ -26,7 +27,7 @@ const int HEIGHT = 1440;
 /**
  *  camera
  */
-Camera camera(glm::vec3(0.0f, 0.0f, 155.0f));  /* NOLINT */
+Camera camera(glm::vec3(0.0f, 120.0f, 255.0f));  /* NOLINT */
 float lastX = WIDTH / 2.0f;
 float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -82,13 +83,25 @@ void scrollCallback(GLFWwindow* _window, double xoffset, double yoffset) {
 }
 
 void calcModels(std::vector<glm::mat4>& matrices, const int mount, const float radius, const float offset) {
-    glm::mat4 model{};
     srand(static_cast<unsigned int>(glfwGetTime()));
     for (int i = 0; i < mount; i++) {
-        float angle = ((float)i / 100.0f) * 360.0f;
-        float dispatch = (float)(random() % (int)(2 * offset * 100.0f)) / 100.0f;
-        float x = sin(angle) * radius + dispatch;
+        glm::mat4 model{1.0f};
 
+        float angle = ((float)i / 100.0f) * 360.0f;
+        float dispatch = (float)(random() % (int)(2 * offset * 100.0f)) / 100.0f - offset;
+        float x = sinf(angle) * radius + dispatch;
+        float y = dispatch * 0.4f;
+        float z = cosf(angle) * radius + dispatch;
+
+        model = glm::translate(model, glm::vec3(x, y, z));
+
+        auto rotate = (float)(random() % 360);
+        model = glm::rotate(model, glm::radians(rotate), glm::vec3(0.3f, 0.4f, 0.8f));
+
+        auto scale = (float)(random() % 20) / 100.0f;
+        model = glm::scale(model, glm::vec3(scale));
+
+        matrices.push_back(model);
     }
 }
 
@@ -170,7 +183,6 @@ int main() {
     GLuint VAO;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
-
     GLuint VBO;
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -192,14 +204,59 @@ int main() {
     glVertexAttribDivisor(2, 1);
     glBindVertexArray(0);
 
+
     GLuint program = LoadShaders(vertexPath, fragmentPath);
     Model planet(planetPath);
+    GLuint rockProgram = LoadShaders(rockVertexPath, fragmentPath);
+    Model rock(rockPath);
 
+    // generate models;
+    std::vector<glm::mat4> modelMats;
+    const int amount = 100000;
+    calcModels(modelMats, amount, 150.0f, 25.0f);
+
+    //
+    GLuint buffer;
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(glm::mat4) * amount, &modelMats[0], GL_STATIC_DRAW);
+
+    for (const auto& mesh : rock.meshes) {
+        glBindVertexArray(mesh.VAO);
+        glEnableVertexAttribArray(3);
+        glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), nullptr);
+        glEnableVertexAttribArray(4);
+        glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(sizeof(glm::vec4)));
+        glEnableVertexAttribArray(5);
+        glVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(2 * sizeof(glm::vec4)));
+        glEnableVertexAttribArray(6);
+        glVertexAttribPointer(6, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(3 * sizeof(glm::vec4)));
+
+        glVertexAttribDivisor(3, 1);
+        glVertexAttribDivisor(4, 1);
+        glVertexAttribDivisor(5, 1);
+        glVertexAttribDivisor(6, 1);
+
+        glBindVertexArray(0);
+    }
+
+    auto lastTime = (float)glfwGetTime();
+    int nbFrame = 0;
     while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0) {
         auto currentTime = (float)glfwGetTime();
         deltaTime = currentTime - lastFrame;
         lastFrame = currentTime;
         processInput(window);
+
+        {
+            // fps
+            nbFrame++;
+            if (currentTime - lastTime >= 1.0f) {
+                std::cout << 1000.0f / (float)nbFrame << " ms/frame" << std::endl;
+                nbFrame = 0;
+                lastTime = currentTime;
+            }
+        }
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -217,6 +274,15 @@ int main() {
         SetUniform(program, "model", model);
 
         planet.draw(program);
+
+
+        glUseProgram(rockProgram);
+        SetUniform(rockProgram, "projection", projection);
+        SetUniform(rockProgram, "view", view);
+        for (const auto& mesh : rock.meshes) {
+            glBindVertexArray(mesh.VAO);
+            glDrawElementsInstanced(GL_TRIANGLES, (int)mesh.indices.size(), GL_UNSIGNED_INT, nullptr, amount);
+        }
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
