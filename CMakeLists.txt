@@ -120,6 +120,14 @@ target_link_libraries(playground_multisample_anti_aliasing
 		${ALL_LIBS}
 		)
 
+# playground_blinn_phong
+add_executable(playground_blinn_phong
+		playground_blinn_phong/playground.cpp
+		${src})
+target_link_libraries(playground_blinn_phong
+		${ALL_LIBS}
+		)
+
 
 # User playground
 add_executable(playground_math_test

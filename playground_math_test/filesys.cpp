@@ -5,7 +5,7 @@
 #include <filesystem>
 #include <iostream>
 
-int main() {
+int main_1() {
 
 
     std::filesystem::path currentPath = std::filesystem::current_path();
