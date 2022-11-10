@@ -128,6 +128,14 @@ target_link_libraries(playground_blinn_phong
 		${ALL_LIBS}
 		)
 
+# playground_gamma_correction
+add_executable(playground_gamma_correction
+		playground_gamma_correction/playground.cpp
+		${src})
+target_link_libraries(playground_gamma_correction
+		${ALL_LIBS}
+		)
+
 
 # User playground
 add_executable(playground_math_test

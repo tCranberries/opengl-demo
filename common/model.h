@@ -34,7 +34,7 @@ public:
     std::vector<Mesh> meshes;
     std::string directory;
 
-    __attribute__((unused)) bool gammaCorrection{};
+    bool gammaCorrection{};
     explicit Model(const std::string& path, bool gamma = false) : gammaCorrection(gamma) {
         loadModel(path);
     }

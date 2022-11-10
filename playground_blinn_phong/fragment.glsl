@@ -30,11 +30,13 @@ void main() {
     float spec = 0.0;
     if (blinn) {
         // blinn-phong
+        // 半程向量与法向量的约束点乘
         vec3 halfVec = normalize(lightVec + viewVec);
         spec = pow(max(dot(halfVec, normal), 0.0), 32.0);
     }
     else {
         // phong
+        // 观察者向量与反射向量的约束点乘
         vec3 reflectVec = normalize(reflect(-lightVec, normal));
         spec = pow(max(dot(reflectVec, viewVec), 0.0), 8.0);
     }

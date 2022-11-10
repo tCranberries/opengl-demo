@@ -26,4 +26,6 @@ void SetUniform(GLuint program, const char* name, int value);
 
 void SetUniform(GLuint program, const char* name, glm::vec3 value);
 
+void SetUniform(GLuint program, const char* name, GLint count, glm::vec3 value[]);
+
 #endif

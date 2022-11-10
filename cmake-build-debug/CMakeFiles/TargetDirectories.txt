@@ -7,6 +7,7 @@
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_load_model_skybox.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_multisample_anti_aliasing.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_blinn_phong.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_gamma_correction.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_math_test.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
