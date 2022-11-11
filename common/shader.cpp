@@ -231,6 +231,11 @@ void SetUniform(GLuint program, const char* name, int value) {
     glUniform1i((GLint)location, value);
 }
 
+void SetUniform(GLuint program, const char* name, GLuint value) {
+    GLuint location = glGetUniformLocation(program, name);
+    glUniform1ui((GLint)location, value);
+}
+
 void SetUniform(GLuint program, const char* name, GLint count, glm::vec3 value[]) {
     GLuint location = glGetUniformLocation(program, name);
     glUniform3fv((GLint)location, count, &value[0][0]);

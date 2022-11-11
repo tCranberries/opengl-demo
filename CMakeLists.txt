@@ -136,6 +136,14 @@ target_link_libraries(playground_gamma_correction
 		${ALL_LIBS}
 		)
 
+# playground_shadow_mapping
+add_executable(playground_shadow_mapping
+		playground_shadow_mapping/playground.cpp
+		${src})
+target_link_libraries(playground_shadow_mapping
+		${ALL_LIBS}
+		)
+
 
 # User playground
 add_executable(playground_math_test
