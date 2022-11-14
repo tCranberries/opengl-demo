@@ -357,6 +357,7 @@ int main() {
         // render depth of scene to texture, create shadow map
         float nearPlane = 1.0f;
         float farPlane = 7.5f;
+        // 透视投影因此更经常用在点光源和聚光灯上，而正交投影经常用在定向光上
         glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, nearPlane, farPlane);
         glm::mat4 lightView = glm::lookAt(lightPosition, glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
         glm::mat4 lightModel(1.0f);
