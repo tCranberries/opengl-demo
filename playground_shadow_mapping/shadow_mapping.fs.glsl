@@ -17,10 +17,13 @@ uniform vec3 cameraPosition;
 uniform vec3 lightPosition;
 
 // in shadow 1.0   out of shadow 0.0
-float ShadowCalculation(vec4 fragPosLightSpace) {
+float ShadowCalculation(vec4 fragPosLightSpace, float diff) {
     vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
     projCoords = projCoords * 0.5 + 0.5;
-    float closestDepth = texture(depthMap, projCoords.xy).r;
+
+    // bias
+    float bias = max(0.05 * (1.0 - diff), 0.005);
+    float closestDepth = bias + texture(depthMap, projCoords.xy).r;
     float currentDepth = projCoords.z;
     float shadow = currentDepth > closestDepth ? 1.0 : 0.0;
 
@@ -49,7 +52,8 @@ void main() {
     float spec = pow(max(dot(halfDir, normal), 0.0), 64.0);
     vec3 specular = spec * lightColor;
 
-    float shadow = ShadowCalculation(vsin.vFragPosLightSpace);
+
+    float shadow = ShadowCalculation(vsin.vFragPosLightSpace, diff);
 
     vec3 res = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;
 
