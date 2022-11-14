@@ -22,10 +22,17 @@ float ShadowCalculation(vec4 fragPosLightSpace, float diff) {
     projCoords = projCoords * 0.5 + 0.5;
 
     // bias
+    // 当阴影偏移到一个夸张的值时，就会出现明显的阴影悬浮（peter panning）问题
+    // 解决这个问题的一个思路就是 渲染深度贴图的时候开启正面剔除，这样，相关片段的深度贴图值就会更大，即使一个夸张的bias也不会影响到该值
     float bias = max(0.05 * (1.0 - diff), 0.005);
     float closestDepth = bias + texture(depthMap, projCoords.xy).r;
     float currentDepth = projCoords.z;
     float shadow = currentDepth > closestDepth ? 1.0 : 0.0;
+
+    // Keep the shadow at 0.0 when outside the far_plane region of the light's frustum.
+    if (projCoords.z > 1.0) {
+        shadow = 0.0;
+    }
 
     return shadow;
 }
