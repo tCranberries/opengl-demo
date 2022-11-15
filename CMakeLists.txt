@@ -144,6 +144,13 @@ target_link_libraries(playground_shadow_mapping
 		${ALL_LIBS}
 		)
 
+# playground_shadow_mapping_point_light
+add_executable(playground_shadow_mapping_point_light
+		playground_shadow_mapping_point_light/playground.cpp
+		${src})
+target_link_libraries(playground_shadow_mapping_point_light
+		${ALL_LIBS}
+		)
 
 # User playground
 add_executable(playground_math_test
