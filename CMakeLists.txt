@@ -152,10 +152,18 @@ target_link_libraries(playground_shadow_mapping_point_light
 		${ALL_LIBS}
 		)
 
+# playground_normal_mapping
+add_executable(playground_normal_mapping
+		playground_normal_mapping/playground.cpp
+		${src})
+target_link_libraries(playground_normal_mapping
+		${ALL_LIBS}
+		)
+
 # User playground
 add_executable(playground_math_test
 		playground_math_test/calculate.cpp
-		playground_math_test/filesys.cpp)
+		playground_math_test/filesys.cpp playground_math_test/TBN.cpp playground_math_test/normal_matrix.cpp)
 target_link_libraries(playground_math_test
 		${ALL_LIBS}
 		)

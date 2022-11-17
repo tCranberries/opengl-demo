@@ -5,7 +5,7 @@
 #include <iostream>
 #include <glm/glm.hpp>
 
-int main() {
+int main_vec3() {
 
     glm::vec3 origin(0.5f, 0.6f, 0.7f);
 
