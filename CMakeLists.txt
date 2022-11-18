@@ -160,6 +160,14 @@ target_link_libraries(playground_normal_mapping
 		${ALL_LIBS}
 		)
 
+# playground_normal_mapping
+add_executable(playground_parrallax_mapping
+		playground_parrallax_mapping/playground.cpp
+		${src})
+target_link_libraries(playground_parrallax_mapping
+		${ALL_LIBS}
+		)
+
 # User playground
 add_executable(playground_math_test
 		playground_math_test/calculate.cpp

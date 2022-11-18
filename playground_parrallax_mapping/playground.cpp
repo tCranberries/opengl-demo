@@ -14,10 +14,11 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_normal_mapping/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_normal_mapping/fragment.glsl";
-const char* textureWallPath = "/home/wzw/documents/ogl-master/resource/textures/brickwall.jpg";
-const char* textureWallNMPath = "/home/wzw/documents/ogl-master/resource/textures/brickwall_normal.jpg";
+const char* vertexPath = "/home/wzw/documents/ogl-master/playground_parrallax_mapping/vertex.glsl";
+const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_parrallax_mapping/fragment.glsl";
+const char* textureWallPath = "/home/wzw/documents/ogl-master/resource/textures/bricks2.jpg";
+const char* textureWallNMPath = "/home/wzw/documents/ogl-master/resource/textures/bricks2_normal.jpg";
+const char* textureWallDisplacePath = "/home/wzw/documents/ogl-master/resource/textures/bricks2_disp.jpg";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;
@@ -248,9 +249,12 @@ int main() {
     stbi_set_flip_vertically_on_load(true);
     GLuint diffTexture = loadTexture(textureWallPath);
     GLuint normalMap = loadTexture(textureWallNMPath);
+    GLuint displaceMap = loadTexture(textureWallDisplacePath);
+
     glUseProgram(program);
     SetUniform(program, "diffuseTexture", 0);
     SetUniform(program, "normalMap", 1);
+    SetUniform(program, "displaceMap", 2);
 
     glm::vec3 lightPos(0.5f, 1.0f, 0.3f);
     GLuint VAO{};
@@ -282,6 +286,8 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, diffTexture);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, normalMap);
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, displaceMap);
         renderScene(VAO, VBO);
 
         // render a small light
