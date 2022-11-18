@@ -160,11 +160,19 @@ target_link_libraries(playground_normal_mapping
 		${ALL_LIBS}
 		)
 
-# playground_normal_mapping
+# playground_parrallax_mapping
 add_executable(playground_parrallax_mapping
 		playground_parrallax_mapping/playground.cpp
 		${src})
 target_link_libraries(playground_parrallax_mapping
+		${ALL_LIBS}
+		)
+
+# playground_normal_mapping
+add_executable(playground_HDR
+		playground_HDR/playground.cpp
+		${src})
+target_link_libraries(playground_HDR
 		${ALL_LIBS}
 		)
 
