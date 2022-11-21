@@ -1054,6 +1054,74 @@ build playground_HDR: CXX_EXECUTABLE_LINKER__playground_HDR_Debug CMakeFiles/pla
   TARGET_PDB = playground_HDR.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target playground_hdr_bloom
+
+
+#############################################
+# Order-only phony target for playground_hdr_bloom
+
+build cmake_object_order_depends_target_playground_hdr_bloom: phony || CMakeFiles/playground_hdr_bloom.dir
+
+build CMakeFiles/playground_hdr_bloom.dir/playground_hdr_bloom/playground.cpp.o: CXX_COMPILER__playground_hdr_bloom_Debug /home/wzw/documents/ogl-master/playground_hdr_bloom/playground.cpp || cmake_object_order_depends_target_playground_hdr_bloom
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_hdr_bloom.dir/playground_hdr_bloom/playground.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_hdr_bloom.dir/playground_hdr_bloom
+
+build CMakeFiles/playground_hdr_bloom.dir/common/shader.cpp.o: CXX_COMPILER__playground_hdr_bloom_Debug /home/wzw/documents/ogl-master/common/shader.cpp || cmake_object_order_depends_target_playground_hdr_bloom
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_hdr_bloom.dir/common/shader.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_hdr_bloom.dir/common
+
+build CMakeFiles/playground_hdr_bloom.dir/common/stb_image.cpp.o: CXX_COMPILER__playground_hdr_bloom_Debug /home/wzw/documents/ogl-master/common/stb_image.cpp || cmake_object_order_depends_target_playground_hdr_bloom
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_hdr_bloom.dir/common/stb_image.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_hdr_bloom.dir/common
+
+build CMakeFiles/playground_hdr_bloom.dir/common/camera.cpp.o: CXX_COMPILER__playground_hdr_bloom_Debug /home/wzw/documents/ogl-master/common/camera.cpp || cmake_object_order_depends_target_playground_hdr_bloom
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_hdr_bloom.dir/common/camera.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_hdr_bloom.dir/common
+
+build CMakeFiles/playground_hdr_bloom.dir/common/mesh.cpp.o: CXX_COMPILER__playground_hdr_bloom_Debug /home/wzw/documents/ogl-master/common/mesh.cpp || cmake_object_order_depends_target_playground_hdr_bloom
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_hdr_bloom.dir/common/mesh.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_hdr_bloom.dir/common
+
+build CMakeFiles/playground_hdr_bloom.dir/common/model.cpp.o: CXX_COMPILER__playground_hdr_bloom_Debug /home/wzw/documents/ogl-master/common/model.cpp || cmake_object_order_depends_target_playground_hdr_bloom
+  DEFINES = -DGLEW_STATIC -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles/playground_hdr_bloom.dir/common/model.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  OBJECT_FILE_DIR = CMakeFiles/playground_hdr_bloom.dir/common
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target playground_hdr_bloom
+
+
+#############################################
+# Link the executable playground_hdr_bloom
+
+build playground_hdr_bloom: CXX_EXECUTABLE_LINKER__playground_hdr_bloom_Debug CMakeFiles/playground_hdr_bloom.dir/playground_hdr_bloom/playground.cpp.o CMakeFiles/playground_hdr_bloom.dir/common/shader.cpp.o CMakeFiles/playground_hdr_bloom.dir/common/stb_image.cpp.o CMakeFiles/playground_hdr_bloom.dir/common/camera.cpp.o CMakeFiles/playground_hdr_bloom.dir/common/mesh.cpp.o CMakeFiles/playground_hdr_bloom.dir/common/model.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so
+  FLAGS = -g
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  -lglfw  -lGLEW  -lassimp
+  OBJECT_DIR = CMakeFiles/playground_hdr_bloom.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = playground_hdr_bloom
+  TARGET_PDB = playground_hdr_bloom.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target playground_math_test
 
 
@@ -1142,7 +1210,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/wzw/documents/ogl-master/cmake-build-debug
 
-build all: phony playground playground_advanced_opengl playground_geometry_shader playground_load_model playground_instancing_planet playground_instancing playground_load_model_skybox playground_multisample_anti_aliasing playground_blinn_phong playground_gamma_correction playground_shadow_mapping playground_shadow_mapping_point_light playground_normal_mapping playground_parrallax_mapping playground_HDR playground_math_test
+build all: phony playground playground_advanced_opengl playground_geometry_shader playground_load_model playground_instancing_planet playground_instancing playground_load_model_skybox playground_multisample_anti_aliasing playground_blinn_phong playground_gamma_correction playground_shadow_mapping playground_shadow_mapping_point_light playground_normal_mapping playground_parrallax_mapping playground_HDR playground_hdr_bloom playground_math_test
 
 # =============================================================================
 # Built-in targets

@@ -13,6 +13,7 @@
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_normal_mapping.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_parrallax_mapping.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_HDR.dir
+/home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_hdr_bloom.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/playground_math_test.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/wzw/documents/ogl-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
