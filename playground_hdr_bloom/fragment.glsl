@@ -8,7 +8,10 @@ in VS_OUT {
     vec3 vFragPos;
 } vsin;
 
-out vec4 fragmentColor;
+// MRT
+layout (location = 0) out vec4 fragmentColor;
+layout (location = 1) out vec4 brightColor;
+
 
 uniform sampler2D diffuseTexture;
 uniform vec3 lightPos[4];
@@ -23,17 +26,17 @@ vec3 calcLight(vec3 normal, vec3 lightPosision, vec3 lightColor, vec3 fragPos, v
     float diff = max(dot(lightDir, normal), 0.0);
     vec3 diffuse = diff * lightColor;
 
-    // specular blinn phong
-    vec3 viewDir = normalize(viewPos - fragPos);
-    vec3 halfDir = normalize(lightDir + viewDir);
-    float spec = pow(max(dot(halfDir, normal), 0.0), 16.0);
-    vec3 specular = spec * lightColor;
+//    // specular blinn phong
+//    vec3 viewDir = normalize(viewPos - fragPos);
+//    vec3 halfDir = normalize(lightDir + viewDir);
+//    float spec = pow(max(dot(halfDir, normal), 0.0), 16.0);
+//    vec3 specular = spec * lightColor;
 
     // attenaution
     float distance = length(lightPosision - fragPos);
     float attenaution = 1.0 / (distance * distance);
 
-    vec3 res = ambient + diffuse + specular;
+    vec3 res = ambient + diffuse;
     return res * attenaution;
 }
 
@@ -47,6 +50,14 @@ void main() {
         res += calcLight(normal, lightPos[i], lightColors[i], vsin.vFragPos, viewPos);
     }
     res *= color;
+
+    float gray = dot(res, vec3(0.2, 0.7, 0.1));
+    if (gray <= 1.0) {
+        brightColor = vec4(0.0, 0.0, 0.0, 1.0);
+    }
+    else {
+        brightColor = vec4(res, 1.0);
+    }
 
     fragmentColor = vec4(res, 1.0);
 }

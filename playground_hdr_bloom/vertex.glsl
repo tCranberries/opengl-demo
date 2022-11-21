@@ -20,5 +20,5 @@ void main() {
     gl_Position = projection * view * model * vec4(aPosition, 1.0);
     vsout.vFragPos = vec3(model * vec4(aPosition, 1.0));
     vsout.vTexCoord = aTexCoord;
-    vsout.vNormal = normalize(normalMat * (-1 * aNormal));
+    vsout.vNormal = normalize(normalMat * aNormal);
 }
