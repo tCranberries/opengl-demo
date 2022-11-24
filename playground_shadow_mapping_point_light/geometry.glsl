@@ -6,6 +6,8 @@ layout (triangle_strip, max_vertices=18) out;
 uniform mat4 shadowMatrices[6];
 out vec4 FragPos;
 
+// one use is to generate six transformed copies of data
+// to simultaneously render the six faces of a cube map
 void main() {
     for (int face = 0; face < 6; face++) {
         gl_Layer = face;

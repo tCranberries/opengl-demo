@@ -176,11 +176,19 @@ target_link_libraries(playground_HDR
 		${ALL_LIBS}
 		)
 
-# playground_HDR
+# playground_hdr_bloom
 add_executable(playground_hdr_bloom
 		playground_hdr_bloom/playground.cpp
 		${src})
 target_link_libraries(playground_hdr_bloom
+		${ALL_LIBS}
+		)
+
+# playground_deferred_shading
+add_executable(playground_deferred_shading
+		playground_deferred_shading/playground.cpp
+		${src})
+target_link_libraries(playground_deferred_shading
 		${ALL_LIBS}
 		)
 
