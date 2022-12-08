@@ -14,13 +14,13 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_HDR/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_HDR/fragment.glsl";
+const char* vertexPath =      "/home/w/CLionProjects/opengl-demo/playground_HDR/vertex.glsl";
+const char* fragmentPath =    "/home/w/CLionProjects/opengl-demo/playground_HDR/fragment.glsl";
 
-const char* hdrVertexPath = "/home/wzw/documents/ogl-master/playground_HDR/hdr.vs.glsl";
-const char* hdrFragmentPath = "/home/wzw/documents/ogl-master/playground_HDR/hdr.fs.glsl";
+const char* hdrVertexPath =   "/home/w/CLionProjects/opengl-demo/playground_HDR/hdr.vs.glsl";
+const char* hdrFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_HDR/hdr.fs.glsl";
 
-const char* woodTexPath = "/home/wzw/documents/ogl-master/resource/textures/wood.png";
+const char* woodTexPath =     "/home/w/CLionProjects/opengl-demo/resource/textures/wood.png";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;

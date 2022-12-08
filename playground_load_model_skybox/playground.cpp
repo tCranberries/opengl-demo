@@ -16,20 +16,20 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/vertex.glsl";
-const char* lampVertexPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/lampVertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/fragment.glsl";
-const char* lampFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/lampFragment.glsl";
-const char* skyboxVertexPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/skyboxVertex.glsl";
-const char* skyboxFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model_skybox/skyboxFragment.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_load_model_skybox/vertex.glsl";
+const char* lampVertexPath = "/home/w/CLionProjects/opengl-demo/playground_load_model_skybox/lampVertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_load_model_skybox/fragment.glsl";
+const char* lampFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_load_model_skybox/lampFragment.glsl";
+const char* skyboxVertexPath = "/home/w/CLionProjects/opengl-demo/playground_load_model_skybox/skyboxVertex.glsl";
+const char* skyboxFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_load_model_skybox/skyboxFragment.glsl";
 
-const char* modelPath = "/home/wzw/documents/ogl-master/resource/model/nanosuit/nanosuit.obj";
-const char* skyRightPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/right.jpg";
-const char* skyLeftPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/left.jpg";
-const char* skyTopPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/top.jpg";
-const char* skyBottomPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/bottom.jpg";
-const char* skyBackPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/back.jpg";
-const char* skyFrontPath = "/home/wzw/documents/ogl-master/resource/textures/skybox/front.jpg";
+const char* modelPath = "/home/w/CLionProjects/opengl-demo/resource/model/nanosuit/nanosuit.obj";
+const char* skyRightPath = "/home/w/CLionProjects/opengl-demo/resource/textures/skybox/right.jpg";
+const char* skyLeftPath = "/home/w/CLionProjects/opengl-demo/resource/textures/skybox/left.jpg";
+const char* skyTopPath = "/home/w/CLionProjects/opengl-demo/resource/textures/skybox/top.jpg";
+const char* skyBottomPath = "/home/w/CLionProjects/opengl-demo/resource/textures/skybox/bottom.jpg";
+const char* skyBackPath = "/home/w/CLionProjects/opengl-demo/resource/textures/skybox/back.jpg";
+const char* skyFrontPath = "/home/w/CLionProjects/opengl-demo/resource/textures/skybox/front.jpg";
 
 // view port size
 const int WIDTH = 2560;

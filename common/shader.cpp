@@ -11,6 +11,39 @@
 #include "shader.hpp"
 
 
+void CheckProgramLinkStatus(GLuint program) {
+    GLint status{};
+    glGetProgramiv(program, GL_LINK_STATUS, &status);
+    if (GL_FALSE == status) {
+        GLint logLen{};
+        glGetProgramiv(program, GL_INFO_LOG_LENGTH, &logLen);
+        std::string log;
+        if (logLen > 0) {
+            log.resize(logLen, ' ');
+            glGetProgramInfoLog(program, logLen, nullptr, &log[0]);
+        }
+        std::cout << "Failed to link program..." << log << std::endl;
+    }
+    else {
+        std::cout << "Link " << program << " success" << std::endl;
+    }
+}
+
+std::string LoadShaderCode(const char* shaderPath) {
+    std::ifstream infile(shaderPath, std::ios::in);
+    if (infile.is_open()) {
+        std::stringstream ssr;
+        ssr << infile.rdbuf();
+        std::string shaderCode(ssr.str());
+        infile.close();
+        return shaderCode;
+    }
+    else {
+        std::cout << "Error opening file: " << shaderPath << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
+
 GLuint CompileVertexShader(const char* vertexFilePath) {
     // Create the shaders
     GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
@@ -208,37 +241,37 @@ GLuint LoadShaders(const char* vertexFilePath, const char* geometryFilePath, con
 
 void SetUniform(GLuint program, const char* name, glm::mat4 matrix) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniformMatrix4fv((GLint)location, 1, GL_FALSE, glm::value_ptr(matrix));
+    glProgramUniformMatrix4fv(program, (GLint)location, 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
 void SetUniform(GLuint program, const char* name, glm::mat3 matrix) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniformMatrix3fv((GLint)location, 1, GL_FALSE, glm::value_ptr(matrix));
+    glProgramUniformMatrix3fv(program, (GLint)location, 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
 void SetUniform(GLuint program, const char* name, glm::vec3 value) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniform3fv((GLint)location, 1, glm::value_ptr(value));
+    glProgramUniform3fv(program, (GLint)location, 1, glm::value_ptr(value));
 }
 
 void SetUniform(GLuint program, const char* name, float value) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniform1f((GLint)location, value);
+    glProgramUniform1f(program, (GLint)location, value);
 }
 
 void SetUniform(GLuint program, const char* name, int value) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniform1i((GLint)location, value);
+    glProgramUniform1i(program, (GLint)location, value);
 }
 
 void SetUniform(GLuint program, const char* name, GLuint value) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniform1ui((GLint)location, value);
+    glProgramUniform1ui(program, (GLint)location, value);
 }
 
 void SetUniform(GLuint program, const char* name, GLint count, glm::vec3 value[]) {
     GLuint location = glGetUniformLocation(program, name);
-    glUniform3fv((GLint)location, count, &value[0][0]);
+    glProgramUniform3fv(program, (GLint)location, count, &value[0][0]);
 }
 
 

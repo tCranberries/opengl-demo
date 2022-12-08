@@ -14,17 +14,17 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_shadow_mapping/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_shadow_mapping/fragment.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_shadow_mapping/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_shadow_mapping/fragment.glsl";
 
-const char* shadowVertexPath = "/home/wzw/documents/ogl-master/playground_shadow_mapping/shadow_mapping.vs.glsl";
-const char* shadowFragmentPath = "/home/wzw/documents/ogl-master/playground_shadow_mapping/shadow_mapping.fs.glsl";
+const char* shadowVertexPath = "/home/w/CLionProjects/opengl-demo/playground_shadow_mapping/shadow_mapping.vs.glsl";
+const char* shadowFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_shadow_mapping/shadow_mapping.fs.glsl";
 
-const char* debugVertexPath = "/home/wzw/documents/ogl-master/playground_shadow_mapping/debug_quad.vs.glsl";
-const char* debugFragmentPath = "/home/wzw/documents/ogl-master/playground_shadow_mapping/debug_quad.fs.glsl";
+const char* debugVertexPath = "/home/w/CLionProjects/opengl-demo/playground_shadow_mapping/debug_quad.vs.glsl";
+const char* debugFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_shadow_mapping/debug_quad.fs.glsl";
 
-const char* floorTexPath = "/home/wzw/documents/ogl-master/resource/textures/wood.png";
-const char* wallTexPath = "/home/wzw/documents/ogl-master/resource/textures/wall.jpg";
+const char* floorTexPath = "/home/w/CLionProjects/opengl-demo/resource/textures/wood.png";
+const char* wallTexPath = "/home/w/CLionProjects/opengl-demo/resource/textures/wall.jpg";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;

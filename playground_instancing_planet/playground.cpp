@@ -14,11 +14,11 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_instancing_planet/vertex.glsl";
-const char* rockVertexPath = "/home/wzw/documents/ogl-master/playground_instancing_planet/rockVertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_instancing_planet/fragment.glsl";
-const char* planetPath = "/home/wzw/documents/ogl-master/resource/model/planet/planet.obj";
-const char* rockPath = "/home/wzw/documents/ogl-master/resource/model/rock/rock.obj";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_instancing_planet/vertex.glsl";
+const char* rockVertexPath = "/home/w/CLionProjects/opengl-demo/playground_instancing_planet/rockVertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_instancing_planet/fragment.glsl";
+const char* planetPath = "/home/w/CLionProjects/opengl-demo/resource/model/planet/planet.obj";
+const char* rockPath = "/home/w/CLionProjects/opengl-demo/resource/model/rock/rock.obj";
 
 
 const int WIDTH = 2560;

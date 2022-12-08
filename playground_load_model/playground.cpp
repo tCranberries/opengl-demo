@@ -15,14 +15,14 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_load_model/vertex.glsl";
-const char* normalVertexPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_vertex.glsl";
-const char* normalGeometryPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_geometry.glsl";
-const char* lampVertexPath = "/home/wzw/documents/ogl-master/playground_load_model/lampVertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/fragment.glsl";
-const char* normalFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/normal_fragment.glsl";
-const char* lampFragmentPath = "/home/wzw/documents/ogl-master/playground_load_model/lampFragment.glsl";
-const char* modelPath = "/home/wzw/documents/ogl-master/resource/model/nanosuit/nanosuit.obj";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/vertex.glsl";
+const char* normalVertexPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/normal_vertex.glsl";
+const char* normalGeometryPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/normal_geometry.glsl";
+const char* lampVertexPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/lampVertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/fragment.glsl";
+const char* normalFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/normal_fragment.glsl";
+const char* lampFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_load_model/lampFragment.glsl";
+const char* modelPath = "/home/w/CLionProjects/opengl-demo/resource/model/nanosuit/nanosuit.obj";
 
 // view port size
 const int WIDTH = 2560;

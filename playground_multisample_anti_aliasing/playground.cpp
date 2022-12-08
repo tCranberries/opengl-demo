@@ -14,10 +14,10 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_multisample_anti_aliasing/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_multisample_anti_aliasing/fragment.glsl";
-const char* screenVertexPath = "/home/wzw/documents/ogl-master/playground_multisample_anti_aliasing/screenVertex.glsl";
-const char* screenFragmentPath = "/home/wzw/documents/ogl-master/playground_multisample_anti_aliasing/screenFragment.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_multisample_anti_aliasing/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_multisample_anti_aliasing/fragment.glsl";
+const char* screenVertexPath = "/home/w/CLionProjects/opengl-demo/playground_multisample_anti_aliasing/screenVertex.glsl";
+const char* screenFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_multisample_anti_aliasing/screenFragment.glsl";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;

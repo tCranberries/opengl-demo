@@ -13,16 +13,16 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground/fragment.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground/fragment.glsl";
 
-const int WIDTH = 1200;
-const int HEIGHT = 800;
+const int WIDTH = 2560;
+const int HEIGHT = 1440;
 
 /**
  *  camera
  */
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));  /* NOLINT */
+Camera camera(glm::vec3(0.0f, 0.0f, 53.0f));  /* NOLINT */
 float lastX = WIDTH / 2.0f;
 float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -126,24 +126,9 @@ int main() {
     int width{};
     int height{};
     int channels{};
-    const char* wallPath = "/home/wzw/documents/ogl-master/resource/images/wall.jpg";
-    const char* awesomeFacePath = "/home/wzw/documents/ogl-master/resource/images/awesomeface.png";
+    const char* wallPath = "/home/w/CLionProjects/opengl-demo/resource/images/wall.jpg";
+    const char* awesomeFacePath = "/home/w/CLionProjects/opengl-demo/resource/images/awesomeface.png";
     unsigned char* data = stbi_load(wallPath, &width, &height, &channels, 0);
-
-    /**
-     * coordinates  and indices
-     */
-    // one of the box
-//    static const GLfloat vertices[] = {
-//            -1.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-//            1.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-//            1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-//            -1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f
-//    };
-//    static const GLuint indices[] = {
-//        0, 1, 2,
-//        2, 3, 0
-//    };
 
     static const GLfloat boxVertices[] = {
             -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -302,7 +287,7 @@ int main() {
         /**
          * mvp  matrix
          */
-        glm::mat4 projection = glm::perspective(glm::radians(camera.zoom), 4 / 3.0f, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.zoom), WIDTH / (float)HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
         SetUniform(program, "projection", projection);
         SetUniform(program, "view", view);
@@ -316,7 +301,13 @@ int main() {
             model = glm::rotate(model, glm::radians(angle) * (float)glfwGetTime(), glm::vec3(1.0f, 0.3f, 0.5f));
             SetUniform(program, "model", model);
 
-            glDrawArrays(GL_TRIANGLES, 0, sizeof(boxVertices) / sizeof(GLfloat));
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, texture1);
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture(GL_TEXTURE_2D, texture2);
+
+
+            glDrawArrays(GL_TRIANGLES, 0, 36);
         }
 //        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 		// Swap buffers

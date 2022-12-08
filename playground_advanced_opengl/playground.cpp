@@ -17,13 +17,13 @@
 
 GLFWwindow* window;
 
-const char* VERTEX_PATH = "/home/wzw/documents/ogl-master/playground_advanced_opengl/vertex.glsl";
-const char* SINGLE_VERTEX_PATH = "/home/wzw/documents/ogl-master/playground_advanced_opengl/single_color_vertex.glsl";
-const char* FRAG_PATH = "/home/wzw/documents/ogl-master/playground_advanced_opengl/fragment.glsl";
-const char* SINGLE_FRAG_PATH = "/home/wzw/documents/ogl-master/playground_advanced_opengl/single_color_fragment.glsl";
-const char* MARBLE_PATH = "/home/wzw/documents/ogl-master/resource/textures/wall.jpg";
-const char* METAL_PATH = "/home/wzw/documents/ogl-master/resource/textures/metal.png";
-const char* GRASS_PATH = "/home/wzw/documents/ogl-master/resource/textures/window.png";
+const char* VERTEX_PATH = "/home/w/CLionProjects/opengl-demo/playground_advanced_opengl/vertex.glsl";
+const char* SINGLE_VERTEX_PATH = "/home/w/CLionProjects/opengl-demo/playground_advanced_opengl/single_color_vertex.glsl";
+const char* FRAG_PATH = "/home/w/CLionProjects/opengl-demo/playground_advanced_opengl/fragment.glsl";
+const char* SINGLE_FRAG_PATH = "/home/w/CLionProjects/opengl-demo/playground_advanced_opengl/single_color_fragment.glsl";
+const char* MARBLE_PATH = "/home/w/CLionProjects/opengl-demo/resource/textures/wall.jpg";
+const char* METAL_PATH = "/home/w/CLionProjects/opengl-demo/resource/textures/metal.png";
+const char* GRASS_PATH = "/home/w/CLionProjects/opengl-demo/resource/textures/window.png";
 
 // view port size
 const int WIDTH = 2560;

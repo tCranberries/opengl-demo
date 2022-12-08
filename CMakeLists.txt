@@ -54,6 +54,7 @@ add_definitions(
 # User playground
 add_executable(playground
 		${src}
+		playground/playground.cpp
 		)
 target_link_libraries(playground
 	${ALL_LIBS}
@@ -199,4 +200,64 @@ add_executable(playground_math_test
 target_link_libraries(playground_math_test
 		${ALL_LIBS}
 		)
+
+
+# opengl 460 core
+
+# opengl reference guide ep1
+# User playground
+add_executable(opg_1.1_triangles
+		${src}
+		opg_1.1_triangles/playground.cpp
+		)
+target_link_libraries(opg_1.1_triangles
+		${ALL_LIBS}
+		)
+
+
+add_executable(opg_1.2_uniform_block
+		${src}
+		opg_1.2_uniform_block/playground.cpp
+		)
+target_link_libraries(opg_1.2_uniform_block
+		${ALL_LIBS}
+		)
+
+add_executable(opg_1.3_program_pipeline
+		${src}
+		opg_1.3_program_pipeline/playground.cpp
+		)
+target_link_libraries(opg_1.3_program_pipeline
+		${ALL_LIBS}
+		)
+
+add_executable(opg_3.1_diffuse_lighting
+		${src}
+		opg_3.1_diffuse_lighting/playground.cpp
+		)
+target_link_libraries(opg_3.1_diffuse_lighting
+		${ALL_LIBS}
+		)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

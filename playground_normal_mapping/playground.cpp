@@ -14,10 +14,10 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_normal_mapping/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_normal_mapping/fragment.glsl";
-const char* textureWallPath = "/home/wzw/documents/ogl-master/resource/textures/brickwall.jpg";
-const char* textureWallNMPath = "/home/wzw/documents/ogl-master/resource/textures/brickwall_normal.jpg";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_normal_mapping/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_normal_mapping/fragment.glsl";
+const char* textureWallPath = "/home/w/CLionProjects/opengl-demo/resource/textures/brickwall.jpg";
+const char* textureWallNMPath = "/home/w/CLionProjects/opengl-demo/resource/textures/brickwall_normal.jpg";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;

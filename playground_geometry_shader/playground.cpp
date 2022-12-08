@@ -15,9 +15,9 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_geometry_shader/vertex.glsl";
-const char* geometryPath = "/home/wzw/documents/ogl-master/playground_geometry_shader/geometry.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_geometry_shader/fragment.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_geometry_shader/vertex.glsl";
+const char* geometryPath = "/home/w/CLionProjects/opengl-demo/playground_geometry_shader/geometry.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_geometry_shader/fragment.glsl";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;

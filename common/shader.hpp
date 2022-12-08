@@ -5,6 +5,10 @@
 #include <glm/gtc/type_ptr.hpp>
 
 
+void CheckProgramLinkStatus(GLuint program);
+
+std::string LoadShaderCode(const char* shaderPath);
+
 GLuint CompileVertexShader(const char* vertexFilePath);
 
 GLuint CompileFragmentShader(const char* fragmentFilePath);

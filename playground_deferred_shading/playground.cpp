@@ -11,18 +11,17 @@
 #include "../common/stb_image.h"
 #include "../common/camera.h"
 
-
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_deferred_shading/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_deferred_shading/fragment.glsl";
-const char* lightVertexPath = "/home/wzw/documents/ogl-master/playground_deferred_shading/light.vs.glsl";
-const char* lightFragmentPath = "/home/wzw/documents/ogl-master/playground_deferred_shading/light.fs.glsl";
-const char* illuminationVertexPath = "/home/wzw/documents/ogl-master/playground_deferred_shading/illumination.vs.glsl";
-const char* illuminationFragmentPath = "/home/wzw/documents/ogl-master/playground_deferred_shading/illumination.fs.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_deferred_shading/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_deferred_shading/fragment.glsl";
+const char* lightVertexPath = "/home/w/CLionProjects/opengl-demo/playground_deferred_shading/light.vs.glsl";
+const char* lightFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_deferred_shading/light.fs.glsl";
+const char* illuminationVertexPath = "/home/w/CLionProjects/opengl-demo/playground_deferred_shading/illumination.vs.glsl";
+const char* illuminationFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_deferred_shading/illumination.fs.glsl";
 
-const char* wallTexPath = "/home/wzw/documents/ogl-master/resource/textures/wall.jpg";
-const char* woodTexPath = "/home/wzw/documents/ogl-master/resource/textures/wood.png";
+const char* wallTexPath = "/home/w/CLionProjects/opengl-demo/resource/textures/wall.jpg";
+const char* woodTexPath = "/home/w/CLionProjects/opengl-demo/resource/textures/wood.png";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;
@@ -30,7 +29,7 @@ const int HEIGHT = 1440;
 /**
  *  camera
  */
-Camera camera(glm::vec3(0.0f, 3.0f, 15.0f));  /* NOLINT */
+Camera camera(glm::vec3(0.0f, 3.0f, 65.0f));  /* NOLINT */
 float lastX = WIDTH / 2.0f;
 float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;

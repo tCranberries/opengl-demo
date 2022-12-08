@@ -14,17 +14,17 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/vertex.glsl";
-const char* fragmentPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/fragment.glsl";
-const char* lightVertexPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/light.vs.glsl";
-const char* lightFragmentPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/light.fs.glsl";
-const char* blurVertexPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/blur.vs.glsl";
-const char* blurFragmentPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/blur.fs.glsl";
-const char* bloomVertexPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/bloom.vs.glsl";
-const char* bloomFragmentPath = "/home/wzw/documents/ogl-master/playground_hdr_bloom/bloom.fs.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/fragment.glsl";
+const char* lightVertexPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/light.vs.glsl";
+const char* lightFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/light.fs.glsl";
+const char* blurVertexPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/blur.vs.glsl";
+const char* blurFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/blur.fs.glsl";
+const char* bloomVertexPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/bloom.vs.glsl";
+const char* bloomFragmentPath = "/home/w/CLionProjects/opengl-demo/playground_hdr_bloom/bloom.fs.glsl";
 
-const char* wallTexPath = "/home/wzw/documents/ogl-master/resource/textures/wall.jpg";
-const char* woodTexPath = "/home/wzw/documents/ogl-master/resource/textures/wood.png";
+const char* wallTexPath = "/home/w/CLionProjects/opengl-demo/resource/textures/wall.jpg";
+const char* woodTexPath = "/home/w/CLionProjects/opengl-demo/resource/textures/wood.png";
 
 const int WIDTH = 2560;
 const int HEIGHT = 1440;
