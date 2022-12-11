@@ -15,8 +15,8 @@
 
 GLFWwindow* window;
 
-const char* vertexPath = "/home/w/CLionProjects/opengl-demo/opg_3.1_diffuse_lighting/vertex.glsl";
-const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/opg_3.1_diffuse_lighting/fragment.glsl";
+const char* vertexPath = "/home/w/CLionProjects/opengl-demo/opg_3.1_basic_lighting/vertex.glsl";
+const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/opg_3.1_basic_lighting/fragment.glsl";
 const char* backpackPath = "/home/w/CLionProjects/opengl-demo/resource/model/backpack/backpack.obj";
 
 

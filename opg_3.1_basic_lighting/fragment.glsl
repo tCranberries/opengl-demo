@@ -26,6 +26,9 @@ const float constant = 1.0;
 const float linear = 0.09;
 const float quadratic = 0.032;
 
+const float levels = 3.0;
+const float factor = 1.0 / levels;
+
 //
 subroutine (lightModelType)
 vec3 calculatePointLight() {
@@ -70,7 +73,7 @@ vec3 calculateNonAttenLight() {
     vec3 normal = normalize(vInfo.vNormal);
     vec3 lightDir = normalize(lightPos - vec3(vInfo.vFragmentPos));
     float diff = max(dot(normal, lightDir), 0.0);
-    vec3 diffuse = lightColor * diff * texDiffuseColor;
+    vec3 diffuse = lightColor * floor(diff * levels) * factor * texDiffuseColor;
 
     // specular  blinn-phone
     vec3 viewerDir = normalize(viewerPos - vec3(vInfo.vFragmentPos));
@@ -78,16 +81,31 @@ vec3 calculateNonAttenLight() {
     float spec = pow(max(dot(halfwayDir, normal), 0.0), shiness);
     vec3 specular = lightColor * spec * texSpecularColor;
 
-    return ambient + diffuse + specular;
+//    return ambient + diffuse + specular;/
+
+    // cartoon level sharp transimistion
+
+    return ambient + diffuse;
 }
 
 
 void main() {
 
-    vec3 res = vec3(0.0);
-    res = lightModel();
+    // for effec
 
-    fragmentColor = vec4(res, 1.0);
+//    float scale = 15.0;
+//    // greaterThan — perform a component-wise greater-than comparison of two vectors
+//    // fract — compute the fractional part of the argument
+//    bvec2 toDiscard = greaterThan(fract(vInfo.vTexCoord * scale), vec2(0.2, 0.2));
+//    // all — check whether all elements of a boolean vector are true
+//    if (all(toDiscard)) {
+//        discard;
+//    }
+//    else {
+        vec3 res = vec3(0.0);
+        res = lightModel();
+        fragmentColor = vec4(res, 1.0);
+//    }
 }
 
 

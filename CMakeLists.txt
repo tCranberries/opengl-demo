@@ -231,11 +231,11 @@ target_link_libraries(opg_1.3_program_pipeline
 		${ALL_LIBS}
 		)
 
-add_executable(opg_3.1_diffuse_lighting
+add_executable(opg_3.1_basic_lighting
 		${src}
-		opg_3.1_diffuse_lighting/playground.cpp
+		opg_3.1_basic_lighting/playground.cpp
 		)
-target_link_libraries(opg_3.1_diffuse_lighting
+target_link_libraries(opg_3.1_basic_lighting
 		${ALL_LIBS}
 		)
 
