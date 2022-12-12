@@ -20,5 +20,6 @@
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_1.2_uniform_block.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_1.3_program_pipeline.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_3.1_basic_lighting.dir
+/home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_4.1_pbr.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

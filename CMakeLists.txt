@@ -241,6 +241,15 @@ target_link_libraries(opg_3.1_basic_lighting
 
 
 
+add_executable(opg_4.1_pbr
+		${src}
+		opg_4.1_pbr/playground.cpp
+		)
+target_link_libraries(opg_4.1_pbr
+		${ALL_LIBS}
+		)
+
+
 
 
 

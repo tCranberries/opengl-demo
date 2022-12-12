@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <cmath>
 #include <cstdio>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -17,8 +18,9 @@ GLFWwindow* window;
 const char* vertexPath = "/home/w/CLionProjects/opengl-demo/opg_1.1_triangles/vertex.glsl";
 const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/opg_1.1_triangles/fragment.glsl";
 
-const int WIDTH = 1920;
+const int WIDTH = 1080;
 const int HEIGHT = 1080;
+
 
 /**
  *  camera
@@ -79,6 +81,17 @@ void scrollCallback(GLFWwindow* _window, double xoffset, double yoffset) {
     camera.processMouseScroll(static_cast<float>(xoffset), static_cast<float>(yoffset));
 }
 
+// generate circle vertices
+void drawCircle(glm::vec3 center, GLfloat radius, GLint numbersOfSides, std::vector<GLfloat>& vertices) {
+    vertices.push_back(center.x);
+    vertices.push_back(center.y);
+    vertices.push_back(center.z);
+    for (int i = 0; i <= numbersOfSides; i++) {
+        vertices.push_back(center.x + radius * (float)std::cos((float)i * 2.0f * M_PI / numbersOfSides));
+        vertices.push_back(center.y + radius * (float)std::sin((float)i * 2.0f * M_PI / numbersOfSides));
+        vertices.push_back(center.z);
+    }
+}
 
 int main() {
 	// Initialise GLFW
@@ -152,17 +165,20 @@ int main() {
     glViewport(0, 0, WIDTH, HEIGHT);
 	glClearColor(127 / 255.0f, 255 / 255.0f, 212 / 255.0f, 0.0f);
 
+
+    std::vector<GLfloat> circleVertices;
+    drawCircle(glm::vec3(0, 0, 0), 1, 200, circleVertices);
+
+
     GLuint VAO;
     GLuint VBO;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, (long)(circleVertices.size() * sizeof(GLfloat)), &circleVertices[0], GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)nullptr);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)nullptr);
     glBindVertexArray(0);
 
     GLuint program = LoadShaders(vertexPath, fragmentPath);
@@ -216,12 +232,12 @@ int main() {
 //        SetUniform(program, "projection", projection);
 //        SetUniform(program, "view", view);
 
-        model = glm::rotate(model, glm::radians(45.0f) * currentTime, glm::vec3(1.0f, 0.0f, 0.0f));
+
 
         SetUniform(program, "model", model);
 
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLE_FAN, 0, (GLint)circleVertices.size());
 
 		// Swap buffers
 		glfwSwapBuffers(window);
