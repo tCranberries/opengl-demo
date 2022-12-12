@@ -17,6 +17,13 @@ GLFWwindow* window;
 
 const char* vertexPath = "/home/w/CLionProjects/opengl-demo/opg_4.1_pbr/vertex.glsl";
 const char* fragmentPath = "/home/w/CLionProjects/opengl-demo/opg_4.1_pbr/fragment.glsl";
+// textures path
+const char* albedoPath = "/home/w/CLionProjects/opengl-demo/resource/textures/pbr/rusted_iron/albedo.png";
+const char* normalPath = "/home/w/CLionProjects/opengl-demo/resource/textures/pbr/rusted_iron/normal.png";
+const char* metallicPath = "/home/w/CLionProjects/opengl-demo/resource/textures/pbr/rusted_iron/metallic.png";
+const char* roughnessPath = "/home/w/CLionProjects/opengl-demo/resource/textures/pbr/rusted_iron/roughness.png";
+const char* aoPath = "/home/w/CLionProjects/opengl-demo/resource/textures/pbr/rusted_iron/ao.png";
+
 
 const int WIDTH = 1920;
 const int HEIGHT = 1080;
@@ -24,7 +31,7 @@ const int HEIGHT = 1080;
 /**
  * camera
  */
-Camera camera(glm::vec3(0.0f, 0.0f, 23.0f));  /* NOLINT */
+Camera camera(glm::vec3(0.0f, 0.0f, 33.0f));  /* NOLINT */
 float lastX = WIDTH / 2.0f;
 float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -285,6 +292,19 @@ int main() {
     SetUniform(program, "albedo", glm::vec3(0.5f, 0.0f, 0.0f));
     SetUniform(program, "ao", 1.0f);
 
+    // load textures
+    SetUniform(program, "albedoMap", 0);
+    SetUniform(program, "normalMap", 1);
+    SetUniform(program, "metallicMap", 2);
+    SetUniform(program, "roughnessMap", 3);
+    SetUniform(program, "aoMap", 4);
+
+    GLuint albedo = loadTexture(albedoPath);
+    GLuint normal = loadTexture(normalPath);
+    GLuint metallic = loadTexture(metallicPath);
+    GLuint roughness = loadTexture(roughnessPath);
+    GLuint ao = loadTexture(aoPath);
+
 
     while (glfwWindowShouldClose(window) == 0) {
         auto currentTime = (float)glfwGetTime();
@@ -304,19 +324,25 @@ int main() {
         SetUniform(program, "view", view);
         SetUniform(program, "viewerPos", camera.position);
 
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, albedo);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, normal);
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, metallic);
+        glActiveTexture(GL_TEXTURE3);
+        glBindTexture(GL_TEXTURE_2D, roughness);
+        glActiveTexture(GL_TEXTURE4);
+        glBindTexture(GL_TEXTURE_2D, ao);
+
         glm::mat4 model(1.0f);
         // row * column spheres
         for (int row = 0; row < nrRows; row++) {
-            float metallic = (float)row / (float)nrRows;
-            SetUniform(program, "metallic", metallic);
             for (int column = 0; column < nrColumns; column++) {
-                float roughness = glm::clamp((float)column / (float)nrColumns, 0.05f, 1.0f);
-                SetUniform(program, "roughness", roughness);
-
                 model = glm::mat4(1.0f);
                 model = glm::translate(model,
-                                       glm::vec3((column - (nrColumns / 2)) * spacing,
-                                                 (row - (nrRows / 2)) * spacing,
+                                       glm::vec3(((float)column - ((float)nrColumns / 2.0f)) * spacing,
+                                                 ((float)row - ((float)nrRows / 2.0f)) * spacing,
                                                  0.0f));
                 glm::mat3 normalMatrix = glm::transpose(glm::inverse(glm::mat3(model)));
                 SetUniform(program, "model", model);
