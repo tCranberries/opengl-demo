@@ -251,7 +251,13 @@ target_link_libraries(opg_4.1_pbr
 
 
 
-
+add_executable(opg_5.1_ssao
+		${src}
+		opg_5.1_ssao/playground.cpp
+		)
+target_link_libraries(opg_5.1_ssao
+		${ALL_LIBS}
+		)
 
 
 
