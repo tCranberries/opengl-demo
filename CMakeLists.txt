@@ -23,6 +23,12 @@ if(INCLUDE_DISTRIB)
 	add_subdirectory(distrib)
 endif(INCLUDE_DISTRIB)
 
+#
+include_directories(
+		imgui/
+		imgui/backends/
+		imgui/misc/
+)
 
 set(ALL_LIBS
 		${OPENGL_LIBRARY}
@@ -43,6 +49,15 @@ set(src
 		common/model.cpp
 		common/model.h)
 
+set(imgui_src
+		imgui/imgui.cpp
+		imgui/imgui_demo.cpp
+		imgui/imgui_draw.cpp
+		imgui/imgui_tables.cpp
+		imgui/imgui_widgets.cpp
+		imgui/backends/imgui_impl_glfw.cpp
+		imgui/backends/imgui_impl_opengl3.cpp)
+
 add_definitions(
 	-DTW_STATIC
 	-DTW_NO_LIB_PRAGMA
@@ -50,6 +65,15 @@ add_definitions(
 	-DGLEW_STATIC
 	-D_CRT_SECURE_NO_WARNINGS
 )
+
+# imgui example test
+add_executable(imgui
+		${imgui_src}
+		${src}
+		imgui/example/main.cpp)
+target_link_libraries(imgui
+		${ALL_LIBS}
+		)
 
 # User playground
 add_executable(playground
@@ -248,7 +272,6 @@ add_executable(opg_4.1_pbr
 target_link_libraries(opg_4.1_pbr
 		${ALL_LIBS}
 		)
-
 
 
 add_executable(opg_5.1_ssao
