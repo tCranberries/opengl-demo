@@ -2,9 +2,9 @@
 
 out vec4 fragmentColor;
 
-//uniform float greenColor;
+in vec3 vColor;
 
 void main() {
 
-    fragmentColor = vec4(1.0, 0.0, 0.0, 1.0);
+    fragmentColor = vec4(vColor, 1.0);
 }

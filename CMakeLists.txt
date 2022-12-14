@@ -28,6 +28,7 @@ include_directories(
 		imgui/
 		imgui/backends/
 		imgui/misc/
+		common/
 )
 
 set(ALL_LIBS
@@ -56,7 +57,9 @@ set(imgui_src
 		imgui/imgui_tables.cpp
 		imgui/imgui_widgets.cpp
 		imgui/backends/imgui_impl_glfw.cpp
-		imgui/backends/imgui_impl_opengl3.cpp)
+		imgui/backends/imgui_impl_opengl3.cpp
+		common/app_base.h
+		common/app_base.cpp)
 
 add_definitions(
 	-DTW_STATIC

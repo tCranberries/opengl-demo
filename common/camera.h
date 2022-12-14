@@ -54,6 +54,9 @@ public:
         updateCameraVectors();
     }
 
+    void setPosition(glm::vec3 pos) {
+        position = pos;
+    }
 
     [[nodiscard]] glm::mat4 getViewMatrix() const {
         return glm::lookAt(position, position + front, up);

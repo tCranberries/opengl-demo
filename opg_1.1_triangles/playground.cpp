@@ -8,9 +8,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "../common/shader.hpp"
-#include "../common/stb_image.h"
-#include "../common/camera.h"
+#include "shader.hpp"
+#include "stb_image.h"
+#include "camera.h"
 
 
 GLFWwindow* window;
