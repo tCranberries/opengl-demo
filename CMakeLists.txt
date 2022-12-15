@@ -285,7 +285,14 @@ target_link_libraries(opg_5.1_ssao
 		${ALL_LIBS}
 		)
 
-
+add_executable(opg_7.1_point_sprite
+		${src}
+		${imgui_src}
+		opg_7.1_point_sprite/point_sprite.cpp
+		)
+target_link_libraries(opg_7.1_point_sprite
+		${ALL_LIBS}
+		)
 
 
 
