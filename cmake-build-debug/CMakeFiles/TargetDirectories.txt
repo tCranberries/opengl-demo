@@ -24,5 +24,6 @@
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_4.1_pbr.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_5.1_ssao.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_7.1_point_sprite.dir
+/home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/opg_7.2_wireframe.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/w/CLionProjects/opengl-demo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

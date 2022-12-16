@@ -297,7 +297,14 @@ target_link_libraries(opg_7.1_point_sprite
 
 
 
-
+add_executable(opg_7.2_wireframe
+		${src}
+		${imgui_src}
+		opg_7.2_wireframe/point_sprite.cpp
+		)
+target_link_libraries(opg_7.2_wireframe
+		${ALL_LIBS}
+		)
 
 
 
