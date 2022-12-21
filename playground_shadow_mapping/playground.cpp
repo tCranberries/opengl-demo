@@ -344,7 +344,7 @@ int main() {
     SetUniform(shadowProgram, "depthMap", 1);
 
     // light position
-    glm::vec3 lightPosition(-2.0f, 4.0f, -1.0f);
+    glm::vec3 lightPosition(-2.0f, 4.0f, 2.33f);
 
     while (glfwWindowShouldClose(window) == 0) {
         auto currentTime = (float)glfwGetTime();
@@ -358,8 +358,10 @@ int main() {
         float nearPlane = 1.0f;
         float farPlane = 7.5f;
         // 透视投影因此更经常用在点光源和聚光灯上，而正交投影经常用在定向光上
-        glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, nearPlane, farPlane);
-        glm::mat4 lightView = glm::lookAt(lightPosition, glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+//        glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, nearPlane, farPlane);
+//        glm::mat4 lightView = glm::lookAt(lightPosition, glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        glm::mat4 lightProjection = glm::perspective(glm::radians(90.0f), 1.0f, nearPlane, farPlane);
+        glm::mat4 lightView = glm::lookAt(lightPosition, glm::vec3(0.0f, 0.0, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
         glm::mat4 lightModel(1.0f);
         glm::mat4 lightSpaceMat = lightProjection * lightView;
         glUseProgram(depthProgram);
@@ -418,6 +420,16 @@ int main() {
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
 
+        // draw light
+        glBindVertexArray(cubeVAO);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, wallTexture);
+        model = glm::translate(model, lightPosition);
+        model = glm::scale(model, glm::vec3(0.1f));
+        SetUniform(shadowProgram, "model", model);
+        normalMat = glm::transpose(glm::inverse(glm::mat3(model)));
+        SetUniform(shadowProgram, "normalMat", normalMat);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 //        // debug shadow map
 //        glViewport(0, 0, WIDTH, HEIGHT);
 //        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

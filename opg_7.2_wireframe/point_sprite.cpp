@@ -60,6 +60,8 @@ public:
             ImGui::Checkbox("Wireframe", &isWireframe);      // Edit bools storing our window open/close state
 //            ImGui::Checkbox("Another Window", &show_another_window);
 
+            ImGui::SliderFloat3("light position", (float*)&lightPosition, -5.0f, 5.0f);
+
             ImGui::SliderFloat("line width", &lineWidth, 0.0f, 2.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
             ImGui::ColorEdit3("line color", (float*)&lineColor);
 

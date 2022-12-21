@@ -29,6 +29,7 @@ include_directories(
 		imgui/backends/
 		imgui/misc/
 		common/
+		common/shapes/
 )
 
 set(ALL_LIBS
@@ -303,6 +304,16 @@ add_executable(opg_7.2_wireframe
 		opg_7.2_wireframe/point_sprite.cpp
 		)
 target_link_libraries(opg_7.2_wireframe
+		${ALL_LIBS}
+		)
+
+
+add_executable(opg_8.1_shadow_map
+		${src}
+		${imgui_src}
+		opg_8.1_shadow_map/shadow_map.cpp
+		)
+target_link_libraries(opg_8.1_shadow_map
 		${ALL_LIBS}
 		)
 

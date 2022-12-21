@@ -223,7 +223,8 @@ int main() {
          * mvp  matrix
          */
         glUseProgram(program);
-        glm::mat4 projection = glm::perspective(glm::radians(camera.zoom), WIDTH / (float)HEIGHT, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.zoom),
+                                                WIDTH / (float)HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
         glm::mat4 model(1.0f);
         SetUniform(program, "projection", projection);

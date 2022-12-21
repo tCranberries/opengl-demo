@@ -177,7 +177,7 @@ void drawSphere() {
 
     glBindVertexArray(SphereVAO);
     glDrawElements(GL_TRIANGLE_STRIP, (int)IndexCount, GL_UNSIGNED_INT, nullptr);
-    glBindVertexArray(SphereVAO);
+    glBindVertexArray(0);
 }
 
 unsigned int loadTexture(const char* path) {
