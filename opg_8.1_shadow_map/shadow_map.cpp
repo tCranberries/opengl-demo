@@ -127,8 +127,33 @@ public:
             glGenBuffers(1, &cubeVBO);
             glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
             glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
+
+//           允许我们初始化缓存对象中存储的数据
+//            glClearBufferData();
+//            glClearBufferSubData();
+
+//           可以在两个目标对应的缓存之间拷贝数据
+//            glBindBuffer(GL_COPY_READ_BUFFER, cubeVBO);
+//            glBindBuffer(GL_COPY_WRITE_BUFFER, writeVBO);
+//            glCopyBufferSubData();
+
+//          抛弃缓存对象中的部分或者全部数据
+//            glInvalidateBufferData(cubeVBO);
+//            glInvalidateBufferSubData(cubeVBO, 0, sizeof(cubeVertices));
+
             glEnableVertexAttribArray(0);
+            glDisableVertexAttribArray(0);
+            glEnableVertexAttribArray(0);
+            // 传递浮点数类型的顶点属性
             glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 8, nullptr);
+            // 整数类型的顶点属性
+//            glVertexAttribIPointer();   I integer
+            // 双精度类型的顶点属性 double
+//            glVertexAttribLPointer();   L long
+
+            // 设置 index 为 0  的静态顶点属性
+//            glVertexAttrib3f(0, 1.0, 0.0, 1.0);
+//
             glEnableVertexAttribArray(1);
             glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 8, (void*)(3 * sizeof(float)));
             glEnableVertexAttribArray(2);
@@ -225,6 +250,20 @@ public:
         modelMat = glm::rotate(modelMat, glm::radians(60.0f), glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
         modelMat = glm::scale(modelMat, glm::vec3(0.25));
         models.push_back(modelMat);
+
+
+        // 设置渲染模式
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+        // 设置正面多边形的判断方式
+        glFrontFace(GL_CCW);
+
+        // 裁剪某一面
+        glEnable(GL_CULL_FACE);
+        glCullFace(GL_BACK);
+        glDisable(GL_CULL_FACE);
+
+
     }
 
 

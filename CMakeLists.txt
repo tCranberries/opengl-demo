@@ -318,9 +318,23 @@ target_link_libraries(opg_8.1_shadow_map
 		)
 
 
+add_executable(opg_3.5_draw
+		${src}
+		${imgui_src}
+		opg_3.5_draw/main.cpp
+		)
+target_link_libraries(opg_3.5_draw
+		${ALL_LIBS}
+		)
 
-
-
+add_executable(opg_3.6_primitive_restart
+		${src}
+		${imgui_src}
+		opg_3.6_primitive_restart/main.cpp
+		)
+target_link_libraries(opg_3.6_primitive_restart
+		${ALL_LIBS}
+		)
 
 
 
